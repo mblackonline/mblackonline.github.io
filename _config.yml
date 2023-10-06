@@ -20,7 +20,7 @@ timezone: America/New_York
 
 title: Matt Black # the main title
 
-tagline: Digital Coach | CD Techie |  Aspiring Cloud/DevOps Engineer | Lifelong Learner # it will display as the sub-title
+tagline: Digital Coach | CD Techie | Aspiring Cloud/DevOps Engineer | Musician | Lifelong Learner # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.

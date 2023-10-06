@@ -3,6 +3,7 @@ layout: post
 title: "Hello World!"
 date: 2023-10-06 08:10:00 -0400
 categories: first-post
+pin: true
 tags: jekyll cd-tech ctn digital-equity tech-for-good
 image: 
   path: /assets/img/posts/matt-networking-9.26.23.jpg
@@ -11,16 +12,13 @@ image:
 
 ## Hello, World!
 
-Welcome to my new website, where I will share my journey transitioning from a healthcare background into a technology career while aiming to make a positive difference in the world. My name is Matt Black, and I’m a student at Western Governors University majoring in cloud computing. I have a passion for learning about and experimenting with new technologies, and I'm working to channel that enthusiasm into a new career. In addition to my studies, I’m also the Operations Development Lead with [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/), a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/), and a member of the [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/). 
+Welcome to my site, where I will share my journey transitioning from a healthcare background into a technology career while aiming to make a positive difference in the world. My name is Matt Black, and I’m a student at Western Governors University majoring in Cloud Computing. I have a passion for learning about and experimenting with new technologies, and I'm working to channel that enthusiasm into a new career. In addition to my studies, I’m also the Operations Development Lead with [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/), a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/), and a member of the [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/). 
 
-This site was created using the Jekyll-based [Chirpy Starter template](https://github.com/cotes2020/chirpy-starter), which I learned about from the awesome Tim Stewart (a.k.a. Techno Tim) [here](https://technotim.live/posts/jekyll-docs-site/). I envision this website as both a learning repository and a platform for giving back to the community. I will post about topics that I’m studying in my courses, and share information about my projects, challenges, and achievements as I apply what I learn to real-world scenarios. My goal is to create useful and engaging content that can help both myself and others learn and grow in the technology field.
+This site was created using the Jekyll-based [Chirpy Starter template](https://github.com/cotes2020/chirpy-starter), which I learned about from the awesome Tim Stewart (a.k.a. Techno Tim) at his documentation site [here](https://technotim.live/posts/jekyll-docs-site/). I envision this website as both a learning repository and a platform for giving back to the community. I will post about topics that I’m studying in my courses, and share information about my projects, challenges, and achievements as I apply what I learn to real-world scenarios. My goal is to create useful and engaging content that can help both myself and others learn and grow in the technology field.
 
 One of my motivations for working in technology is to make a positive difference in the world. I believe technology can offer solutions for social and environmental issues, like enabling connections to reduce loneliness, empowering the disadvantaged with knowledge, and promoting improved healthcare. I hope to explore these topics in future posts and inspire others to join me in using technology for good.
 
 I welcome your feedback, comments, and suggestions on how I can improve my website and my learning journey. You can reach out to me on [LinkedIn](https://www.linkedin.com/in/matthewblack/) or follow me on [GitHub](https://github.com/mblackonline) to stay updated on my progress and connect with me.
-
-Thank you for visiting my website and for your support.
-
 
 
 ## Links
