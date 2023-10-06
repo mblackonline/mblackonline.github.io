@@ -9,7 +9,7 @@ order: 4
 
 Welcome to my new website, where I will share my journey transitioning from a healthcare background into a technology career while aiming to make a positive difference in the world. My name is Matt Black, and I’m a student at Western Governors University majoring in cloud computing. I have a passion for learning about and experimenting with new technologies, and I'm working to channel that enthusiasm into a new career.
 
-In addition to my studies, I’m also the Operations Development Lead with [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/), a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/), and a member of the [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/). 
+Alongside my studies, I volunteer my time as the Operations Development Lead for [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/) and as a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/). I'm also proud to be a member of the [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/).
 
 One of my motivations for working in technology is to make a positive difference in the world. I believe technology can offer solutions for social and environmental issues, like enabling connections to reduce loneliness, empowering the disadvantaged with knowledge, and promoting improved healthcare. I hope to explore these topics in future posts and inspire others to join me in using technology for good.
 
