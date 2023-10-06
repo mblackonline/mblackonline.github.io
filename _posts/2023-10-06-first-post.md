@@ -14,7 +14,7 @@ image:
 
 I'm Matt Black, a Cloud Computing student at Western Governors University, transitioning from a healthcare career to the tech industry. I'm passionate about learning and experimenting with new technologies, and I'm excited to share my journey with you on this site.
 
-In addition to my studies, I'm the Operations Development Lead at [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/), a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/), and a member of the [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/). 
+In addition to my studies, I volunteer as the Operations Development Lead at [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/), and as a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/). I'm also a proud member of the [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/). 
 
 This site, built with the Jekyll-based [Chirpy Starter template](https://github.com/cotes2020/chirpy-starter) (thanks to [Techno Tim]( https://technotim.live/posts/jekyll-docs-site/) for the recommendation), will serve as both a learning repository and a platform for giving back to the community. I'll be sharing insights from my courses, updates on my projects, and reflections on my challenges and achievements as I navigate the tech world.
 
