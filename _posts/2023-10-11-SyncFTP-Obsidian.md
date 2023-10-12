@@ -35,7 +35,7 @@ Here's a high-level overview of the required steps:
 
 I'm using a USB stick plugged into the Pi for the sync vault storage, which allows me to easily carry the vault if needed. I'm considering setting up a cron job to automate regular backups to a cloud service for redundancy. If I get around to doing that, I'll update this post with the steps.
 
-The main limitation I've encountered with this solution is that the SyncFTP plugin doesn't work with the iOS Obsidian app for iPhone. However, if I need to save a note on mobile, I can save it in the iOS Notes app and then pull it into Obsidian on my laptop at a later time through iCloud.
+The main limitation I've encountered with this solution is that the SyncFTP plugin doesn't work with the iOS Obsidian app for iPhone. However, if I need to save a note on mobile, I can save it in the iOS Notes app and use iCloud to copy the note to my laptop. Then I can copy the note into my local Obsidian vault and sync it to the remote vault.
 
 I hope this post is helpful to others using Obsidian who are looking for a simple and cost-effective sync solution. Feel free to reach out to me on LinkedIn if you have any questions or suggestions to improve this post.
 
