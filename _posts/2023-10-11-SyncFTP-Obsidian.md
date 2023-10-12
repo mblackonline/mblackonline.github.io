@@ -20,9 +20,9 @@ I was recently introduced to Obsidian and was excited to explore ways to synchro
 
 For this setup, I'm using a [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) as the SFTP server, the Obsidian [SyncFTP](https://obsidian.md/plugins?search=syncftp) Community plugin by Alex Donnan for syncing functionality, and [Tailscale VPN](https://tailscale.com/) (optional for remote connections). *Please take a moment to visit [Alex's GitHub page for the SyncFTP plugin](https://github.com/alex-donnan/SyncFTP) and thank him by starring the project if you find it useful.*
 
-You're not limited to using a Raspberry Pi for the server; any computer capable of serving SFTP can be used. But one of the key advantages of this solution is its cost-effectiveness. The Raspberry Pi is an inexpensive, low-power single-board computer that requires minimal electricity, making it a great choice for this application. Additionally, the USB storage is a cheap way to have a simple way to easily take your storage with you and plug it into another device if needed.
+You're not limited to using a Raspberry Pi for the server; any computer capable of serving SFTP can be used. But one of the key advantages of this solution is its cost-effectiveness. The Raspberry Pi is an inexpensive, low-power single-board computer that requires minimal electricity, making it a great choice for this application. Additionally, the USB storage is a cheap way to easily take your storage with you and plug it into another device if needed.
 
-For those not familiar with SFTP, it's a secure file transfer protocol that uses SSH to encrypt the data being transferred. It's a great choice for this application because it's secure and easy to set up. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol).
+For those not familiar with SFTP, it's a secure file transfer protocol that uses SSH to encrypt the data being transferred. It's a great choice for this application because it's secure and easy to set up. You can read more about it on [Wikipedia - SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol).
 
 ## Steps
 
@@ -30,7 +30,7 @@ Here's a high-level overview of the required steps:
 
 1. **Install Raspberry Pi OS on the Pi and enable SSH.** If you need guidance on getting started, you can refer to the Raspberry Pi Foundation's documentation [here](https://www.raspberrypi.com/documentation/computers/getting-started.html).
 2. **Create a directory on the Raspberry Pi for your Obsidian sync vault.**
-3. **Configure the SyncFTP plugin in Obsidian on the client PC/Mac where you installed Obsidian.** For the FTP URL, use either the local IPv4 address (e.g., 192.168.1.23) or the domain name of your Raspberry Pi (e.g., if your Pi's domain name is `myPi`, then you would use `myPi.local` if you're using Obsidian on Linux, or `myPi` *without .local* for a Windows machine).
+3. **Configure the SyncFTP plugin in Obsidian on the client PC/Mac where you installed Obsidian.** For the FTP URL, use either the local IPv4 address (e.g., 192.168.1.23) or the domain name of your Raspberry Pi (e.g., if your Pi's domain name is `myPi`, then you would use `myPi.local` if you're using Obsidian on Linux, or `myPi` *without .local*  for a Windows machine).
 4. **(Optional) Install Tailscale onto the Pi and onto the device(s) that you want to keep in sync with the remote backup vault.** Tailscale has guides for installing it on the Pi [here](https://tailscale.com/download/linux/rpi-bullseye), and Windows [here](https://tailscale.com/download/windows). Once installed, use the domain name of your Raspberry Pi as the FTP URL to ensure your notes can sync remotely when you're away from home and using the Tailscale VPN.
 
 I'm using a USB stick plugged into the Pi for the sync vault storage, which allows me to easily carry the vault if needed. I'm considering setting up a cron job to automate regular backups to a cloud service for redundancy. If I get around to doing that, I'll update this post with the steps.
