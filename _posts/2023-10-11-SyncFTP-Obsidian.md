@@ -44,7 +44,7 @@ I hope this post is helpful to others using Obsidian who are looking for a simpl
 ## Links
 
 - [Connect with me on LinkedIn](https://www.linkedin.com/in/matthewblack/)
-- [My Resume](https://media.licdn.com/dms/document/media/D562DAQEtdOj-l4YKRg/profile-treasury-document-pdf-analyzed/0/1696552814238?e=1697673600&v=beta&t=Z83mynP8oqQNTvwGLKLPI5BXtQcDKZ9HH9xMg1qNO9c)
+- [My Resume](https://media.licdn.com/dms/document/media/D562DAQECYUI9cjzZ2Q/profile-treasury-document-pdf-analyzed/0/1697120496637?e=1698278400&v=beta&t=t-vspXsgS1XuIjc3vFtS9J4TphRyj8B5ZJ1QSS8voTA)
 - [Collaborate on GitHub](https://github.com/mblackonline)
 - [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/)
 - [Community Tech Network (CTN)](https://communitytechnetwork.org/)
