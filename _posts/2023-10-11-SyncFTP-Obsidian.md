@@ -3,7 +3,7 @@ layout: post
 title: "Setting up an SFTP Server on Raspberry Pi for Obsidian Sync"
 date: 2023-10-11 20:54:00 -0400
 categories: raspberry-pi obsidian syncftp
-pin: true
+pin: false
 tags: raspberry-pi obsidian sftp syncftp tailscale
 image: 
   path: /assets/img/posts/rPi.jpg
