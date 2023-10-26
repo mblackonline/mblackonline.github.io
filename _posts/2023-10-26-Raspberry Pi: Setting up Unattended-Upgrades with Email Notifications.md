@@ -51,12 +51,12 @@ ssh your-Pi-userName@raspberrypi-hostname
 ### 2. Update the Apt Package Manager and Upgrade Existing Packages
 ```bash
 sudo apt update && sudo apt upgrade -y && sudo reboot
-# This will update your existing packages and reboot the Pi. Wait for the Pi to reboot and then log back in using the above SSH commands
 ```
+*This will update your existing packages and reboot the Pi. Wait for the Pi to reboot and then log back in using the above SSH commands.*
 
 ### 3. Install Unattended Upgrades and Power Management Base
 
-Installing unattended-upgrades is simple - just run the following command in your terminal:
+Installing unattended-upgrades and power management is simple - just run the following command in your terminal:
 
 ```bash
 sudo apt install unattended-upgrades -y && sudo apt install powermgmt-base -y
