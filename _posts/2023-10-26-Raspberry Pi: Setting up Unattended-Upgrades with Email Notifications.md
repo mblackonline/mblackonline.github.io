@@ -39,7 +39,7 @@ The unattended-upgrades package provides automatic package updates for Debian-ba
   * You have a Gmail account to use for email notifications.
   * You have a basic understanding of how to use the Linux terminal.
 
-# Part 1: Installing and Configuring Unattended Upgrades
+# Part I: Installing and Configuring Unattended Upgrades
 
 ### 1. Login into the Pi via SSH (or any other means that you find convenient)
 
@@ -123,14 +123,41 @@ Be aware that this will reboot your server without warning, so plan maintenance 
 ```bash
 Unattended-Upgrade::Automatic-Reboot-Time "02:00";
 ```
+### 8. Enable Email Notifications to be sent when updates are performed. You can set this value to Set this value to one of: "always", "only-on-error" or "on-change":
+```bash
+Unattended-Upgrade::MailReport "always";
+```
+
+### 9. Test Unattended Upgrades
+To test unattended-upgrades, run the following command in your terminal:
+
+```bash
+sudo unattended-upgrades --dry-run --debug
+```
+If you see output that looks like the following, then you're good to go!
+
+```bash
+Starting unattended upgrades script
+Allowed origins are: origin=Debian,codename=bookworm-updates, origin=Debian,codename=bookworm,label=Debian, origin=Debian,codename=bookworm,label=Debian-Security, origin=Debian,codename=bookworm-security,label=Debian-Security, origin=Raspbian,codename=bookworm,label=Raspbian, origin=Raspberry Pi Foundation,codename=bookworm,label=Raspberry Pi Foundation
+Initial blacklist:
+Initial whitelist (not strict):
+Using (^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$) regexp to find kernel packages
+Using (^linux-.*-6\.1\.0\-rpi4\-rpi\-v8$|^kfreebsd-.*-6\.1\.0\-rpi4\-rpi\-v8$|^gnumach-.*-6\.1\.0\-rpi4\-rpi\-v8$|^.*-modules-6\.1\.0\-rpi4\-rpi\-v8$|^.*-kernel-6\.1\.0\-rpi4\-rpi\-v8$|^linux-.*-6\.1\.0\-rpi4\-rpi\-v8$|^kfreebsd-.*-6\.1\.0\-rpi4\-rpi\-v8$|^gnumach-.*-6\.1\.0\-rpi4\-rpi\-v8$|^.*-modules-6\.1\.0\-rpi4\-rpi\-v8$|^.*-kernel-6\.1\.0\-rpi4\-rpi\-v8$) regexp to find running kernel packages
+pkgs that look like they should be upgraded:
+Fetched 0 B in 0s (0 B/s)
+fetch.run() result: 0
+Packages blacklist due to conffile prompts: []
+No packages found that can be upgraded unattended and no pending auto-removals
+The list of kept packages can't be calculated in dry-run mode.
+```
 
 **NOTE** - if you do not want to enable email notifications, you can stop right here. But if you do want to enable email notifications, keep reading...
 
 ---
 ---
-# Part 2. Configuring Email Notifications with Postfix
+# Part II. Configuring Email Notifications with Postfix
 
-### 8. Enable Email Notifications
+### 10. Enable Email Notifications
 
 To receive email notifications when updates are performed, add your email address to the following line in the 50unattended-upgrades file:
 
@@ -138,12 +165,12 @@ To receive email notifications when updates are performed, add your email addres
 Unattended-Upgrade::Mail "your-email-address@example.com";
 ```
 
-### 9. Create an App Password for Gmail
+### 11. Create an App Password for Gmail
 To use Gmail for our email notifications, we will need to get a Gmail App Password. To do this, follow this guide from Google: [How to generate App Passwords](https://knowledge.workspace.google.com/kb/how-to-generate-an-app-passwords-000009237). 
 
 **Important**- Be sure to copy the password to a safe place once it is generated, as you will not be able to view it again after closing the window.
 
-### 10. Install Postfix for Email Notifications
+### 12. Install Postfix for Email Notifications
 
 To enable the email notifications from unattended-upgrades, we'll be using the [postfix](https://wiki.debian.org/Postfix) application. 
 - Postfix is a mail transfer agent (MTA) that can be used to send and receive email.
@@ -163,7 +190,7 @@ During the postfix configuration select **"Internet Site"**, and specify your Ra
 
 - *__TIP__ - I found the following guide from Tony Florida to be very helpful for learning how to set this up: (https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)*
 
-### 11. Configure the settings for [Simple Authentication and Security Layer (SASL)](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) 
+### 13. Configure the settings for [Simple Authentication and Security Layer (SASL)](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) 
 - *SASL provides a method for adding authentication support for Postfix to allow us to send email through our Gmail account.*
 
 **Check to make sure that the /etc/postfix/sasl/ directory exists by running `ls -la /etc/postfix` in your terminal.** You should see the sasl directory in the output. If the directory doesn’t exist, you can create it using the mkdir command as follows:
@@ -183,7 +210,7 @@ sudo nano /etc/postfix/sasl/sasl_passwd
 ```
 **Note** - there should be no spaces between the characters in your Gmail App Password.
 
-### 12. Next, we will use the [postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
+### 14. Next, we will use the [postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
 - To do this, run the following command in your terminal:
 
 ```bash
@@ -192,7 +219,7 @@ sudo postmap /etc/postfix/sasl/sasl_passwd
 - If you look in the directory at /etc/postfix/sasl, you should now see a new file named sasl_passwd.db.
 - This file is used by Postfix to authenticate with Gmail when sending email. ([See this guide for more details.](https://tecadmin.net/postfix-configure-sasl-authentication-for-remote-smtp/))
 
-### 13. Now we need to change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands in your terminal:
+### 15. Now we need to change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands in your terminal:
 
 ```bash
 sudo chown root:root /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
@@ -201,7 +228,7 @@ sudo chmod 0600 /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
 
 We're almost done, I promise...hang in there! 😊 
 
-### 14. Now we need to configure the main postfix configuration file:
+### 16. Now we need to configure the main postfix configuration file:
 
 The main configuration file for postfix is in the following directory: /etc/postfix/main.cf. To open the main.cf file in a terminal-based text editor such as nano, run the following command:
 
@@ -215,7 +242,7 @@ Then find the following `relayhost =` line, and change your settings to match th
 relayhost = [smtp.gmail.com]:587
 ```
 
-### 15. Add the following lines to the bottom of the main.cf file (credit to Tony Florida's guide [here](https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)):
+### 17. Add the following lines to the bottom of the main.cf file (credit to Tony Florida's guide [here](https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)):
 
 ```bash
 # Enable SASL authentication
@@ -226,24 +253,39 @@ smtp_tls_security_level = encrypt
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 ```
 
-### 16. Restart postfix with the following command:
+### 18. Restart postfix with the following command:
 
 ```bash
 sudo systemctl restart postfix
 ```
 
-### 17. Now let's test to make sure that postfix is working properly. To do this, we can use the sendmail command to send a test email. Run the following command in your terminal:
+### 19. Now - let's test to see if unattended-upgrades can send email notifications. To do this, run the following command in your terminal:
 
-``` bash
-sendmail your-email@example.com
-## You'll see output that looks like this: 
-  ## sendmail: warning: /etc/postfix/main.cf, line 53: overriding earlier entry: smtp_tls_security_level=may
-  ## postdrop: warning: /etc/postfix/main.cf, line 53: overriding earlier entry: smtp_tls_security_level=may
-To: your-email@example.com
-Subject: Testing Postfix
-This is a test email to make sure postfix is working properly
+```bash
+sudo unattended-upgrades -d
 ```
-If you receive the email, then you're good to go! If not, you may need to troubleshoot your postfix configuration.
+You should see output that looks like the following:
+
+```bash
+Starting unattended upgrades script
+Allowed origins are: origin=Debian,codename=bookworm-updates, origin=Debian,codename=bookworm,label=Debian, origin=Debian,codename=bookworm,label=Debian-Security, origin=Debian,codename=bookworm-security,label=Debian-Security, origin=Raspbian,codename=bookworm,label=Raspbian, origin=Raspberry Pi Foundation,codename=bookworm,label=Raspberry Pi Foundation
+Initial blacklist:
+Initial whitelist (not strict):
+Using (^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$) regexp to find kernel packages
+Using (^linux-.*-6\.1\.0\-rpi4\-rpi\-v8$|^kfreebsd-.*-6\.1\.0\-rpi4\-rpi\-v8$|^gnumach-.*-6\.1\.0\-rpi4\-rpi\-v8$|^.*-modules-6\.1\.0\-rpi4\-rpi\-v8$|^.*-kernel-6\.1\.0\-rpi4\-rpi\-v8$|^linux-.*-6\.1\.0\-rpi4\-rpi\-v8$|^kfreebsd-.*-6\.1\.0\-rpi4\-rpi\-v8$|^gnumach-.*-6\.1\.0\-rpi4\-rpi\-v8$|^.*-modules-6\.1\.0\-rpi4\-rpi\-v8$|^.*-kernel-6\.1\.0\-rpi4\-rpi\-v8$) regexp to find running kernel packages
+pkgs that look like they should be upgraded:
+Fetched 0 B in 0s (0 B/s)
+fetch.run() result: 0
+Packages blacklist due to conffile prompts: []
+No packages found that can be upgraded unattended and no pending auto-removals
+Extracting content from /var/log/unattended-upgrades/unattended-upgrades-dpkg.log since 2023-10-26 15:42:01
+Sending mail to your-email@example.com
+sendmail: warning: /etc/postfix/main.cf, line 53: overriding earlier entry: smtp_tls_security_level=may
+postdrop: warning: /etc/postfix/main.cf, line 53: overriding earlier entry: smtp_tls_security_level=may
+mail returned: 0
+``` 
+
+- If you receive an email notification, then you're all set! 🎉 If you didn't receive an email, then you'll need to go back and check your settings to make sure everything is correct.
 
 ## Conclusion
 
