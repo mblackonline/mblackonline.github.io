@@ -135,7 +135,7 @@ No packages found that can be upgraded unattended and no pending auto-removals
 The list of kept packages can't be calculated in dry-run mode.
 ```
 
-**NOTE** - if you do not want to enable email notifications, you can stop right here. But if you do want to enable email notifications, keep reading...
+**NOTE** - if you do not want to enable email notifications, you can stop right here. But if you want to enable email notifications, keep reading...
 
 ---
 ---
@@ -143,12 +143,13 @@ The list of kept packages can't be calculated in dry-run mode.
 
 ### 9. Enable Email Notifications
 
-To receive email notifications when updates are performed, add your email address to the following line in the `50unattended-upgrades` file:
+To receive email notifications when updates are performed, add your email address to the following line in the `50unattended-upgrades` file (using your real email address):
 
 ```bash
 Unattended-Upgrade::Mail "your-email-address@example.com";
 ```
-### 10. Enable Email Notifications to be sent when updates are performed. You can set this value to one of these: "always", "only-on-error" or "on-change":
+### 10. Set the frequency of email notifications. 
+> You can choose how often you receive email notifications from the unattended-upgrades script by setting your notification preference to one of these options: “always”, “only-on-error”, or “on-change”. We will set our notification preference to “always” to receive an email notification every time the script is run.
 ```bash
 Unattended-Upgrade::MailReport "always";
 ```
@@ -256,6 +257,8 @@ sudo systemctl restart postfix
 ```bash
 sudo unattended-upgrades -d
 ```
+> *For this to work, you will need the notification preference set to 'always' (see step 10).*
+
 You should see output that looks like the following:
 
 ```bash
@@ -277,7 +280,7 @@ postdrop: warning: /etc/postfix/main.cf, line 53: overriding earlier entry: smtp
 mail returned: 0
 ``` 
 
-- If you receive an email notification, then you're all set! 🎉 If you didn't receive an email, then you'll need to go back and check your settings to make sure everything is correct.
+> If you receive an email notification, then you're all set! 🎉 If you didn't receive an email, then you'll need to go back and check your settings to make sure everything is correct.
 
 ## Conclusion
 
