@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Unattended-Upgrades with Email Notifications on the Raspberry Pi
+title: Unattended Upgrades with Email Notifications - Keeping Your Raspberry Pi Secure
 date: 2023-10-26 16:54:00 -0400
 categories: raspberry-pi unattended-upgrades postfix security
 pin: false
@@ -9,16 +9,16 @@ image:
   path: /assets/img/posts/unattended-upgrades.jpg
   lqip: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QXSRXhpZgAASUkqAAgAAAAHABIBAwABAAAAAQAAABoBBQABAAAAYgAAABsBBQABAAAAagAAACgBAwABAAAAAgAAADEBAgANAAAAcgAAADIBAgAUAAAAgAAAAGmHBAABAAAAlAAAAKYAAABgAAAAAQAAAGAAAAABAAAAR0lNUCAyLjEwLjI4AAAyMDIzOjEwOjI1IDExOjQ2OjE2AAEAAaADAAEAAAABAAAAAAAAAAkA/gAEAAEAAAABAAAAAAEEAAEAAAAAAQAAAQEEAAEAAACAAAAAAgEDAAMAAAAYAQAAAwEDAAEAAAAGAAAABgEDAAEAAAAGAAAAFQEDAAEAAAADAAAAAQIEAAEAAAAeAQAAAgIEAAEAAACrBAAAAAAAAAgACAAIAP/Y/+AAEEpGSUYAAQEAAAEAAQAA/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgAgAEAAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8AxaKKK7DsFooooAKKKKACiiigCOiiimAlFFFAwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigBKKKKAL1FFFQQWKKKKQhaKKKACiiigBKKKKBiUUUUgCiiimMKKKKACiiigAooooAKKKKQhaKKKYC0UUUCEooooASiiigCrRRRVFHTUUUVgYGxRRRUCJKKKKBBRRRQMKKKKQDaKKKBhRRRQAUUUUAFFFFAwooooEFFFFADqKKKBC0UUUxBRRRQBDRRRQMwqKKKso2KKKKkk3aKKKzMySiiigBaKKKACiiigYUUUUgEooooAKKKKAFooooAKKKKYCUUUUALRRRQIWiiigBaKKKAIaKKKYzmqKKK0LLNFFFSBvUUUVBmSUUUUAFFFFAC0UUUgCiiigAooopgFFFFAC0UUUAFFFFIAooopgLRRRQA6iiikAtFFFMCGiiigZy9FFFaFliiiikB0FFFFQZktFFFIAooooAjooopFiUUUUDJaKKKZAtFFFAhKKKKYBRRRSAKKKKYDqKKKAHUUUUgCiiigCvRRRTA5WiiitDQhooopgbdFFFZkktFFFIQlFFFAyOiiigoSiiigZJRRRTIHUUUUCCiiigBKKKKACiiikAtFFFABRRRTAKKKKAIKKKKBnO0UUVqWYNFFFaGhaoooqSR1FFFIAooooASiiigAooooAWiiigAooooAKKKKACiiigAooooEFFFFAwooooAKKKKAGUUUUxFKiiirND/9kA/+ENMWh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNC40LjAtRXhpdjIiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpHSU1QPSJodHRwOi8vd3d3LmdpbXAub3JnL3htcC8iIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06RG9jdW1lbnRJRD0iZ2ltcDpkb2NpZDpnaW1wOjc3ZTg3ZTRkLTVkNmYtNDdhYy1hMTRmLWFlNmY4NzYyODQyOCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NDQwNDUwMy0yNDVjLTRkOWUtOTY1My03MTUzNzUxYWI4MmYiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2ZjU2N2YxYy0yZjUyLTQyODAtYTM5Zi04ZGI4Zjc5OTdhZjQiIGRjOkZvcm1hdD0iaW1hZ2UvanBlZyIgR0lNUDpBUEk9IjIuMCIgR0lNUDpQbGF0Zm9ybT0iV2luZG93cyIgR0lNUDpUaW1lU3RhbXA9IjE2OTgyNDg3ODEwMzQzNzUiIEdJTVA6VmVyc2lvbj0iMi4xMC4yOCIgeG1wOkNyZWF0b3JUb29sPSJHSU1QIDIuMTAiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6Y2hhbmdlZD0iLyIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowMjc2MGY5YS0xZDgyLTQ4MzYtOTAwMi05NDBkZWYyYWRjYWQiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkdpbXAgMi4xMCAoV2luZG93cykiIHN0RXZ0OndoZW49IjIwMjMtMTAtMjVUMTE6NDM6MTQiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDpjaGFuZ2VkPSIvIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjk3ZjcxOTNkLTlmN2UtNDFlYi1hOGY2LTc0NDM1ZGRiNmUyNSIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iR2ltcCAyLjEwIChXaW5kb3dzKSIgc3RFdnQ6d2hlbj0iMjAyMy0xMC0yNVQxMTo0NjoyMSIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPD94cGFja2V0IGVuZD0idyI/Pv/iArBJQ0NfUFJPRklMRQABAQAAAqBsY21zBDAAAG1udHJSR0IgWFlaIAfnAAoAGQAPACYAOGFjc3BNU0ZUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtbGNtcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADWRlc2MAAAEgAAAAQGNwcnQAAAFgAAAANnd0cHQAAAGYAAAAFGNoYWQAAAGsAAAALHJYWVoAAAHYAAAAFGJYWVoAAAHsAAAAFGdYWVoAAAIAAAAAFHJUUkMAAAIUAAAAIGdUUkMAAAIUAAAAIGJUUkMAAAIUAAAAIGNocm0AAAI0AAAAJGRtbmQAAAJYAAAAJGRtZGQAAAJ8AAAAJG1sdWMAAAAAAAAAAQAAAAxlblVTAAAAJAAAABwARwBJAE0AUAAgAGIAdQBpAGwAdAAtAGkAbgAgAHMAUgBHAEJtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABoAAAAcAFAAdQBiAGwAaQBjACAARABvAG0AYQBpAG4AAFhZWiAAAAAAAAD21gABAAAAANMtc2YzMgAAAAAAAQxCAAAF3v//8yUAAAeTAAD9kP//+6H///2iAAAD3AAAwG5YWVogAAAAAAAAb6AAADj1AAADkFhZWiAAAAAAAAAknwAAD4QAALbEWFlaIAAAAAAAAGKXAAC3hwAAGNlwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW2Nocm0AAAAAAAMAAAAAo9cAAFR8AABMzQAAmZoAACZnAAAPXG1sdWMAAAAAAAAAAQAAAAxlblVTAAAACAAAABwARwBJAE0AUG1sdWMAAAAAAAAAAQAAAAxlblVTAAAACAAAABwAcwBSAEcAQv/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/CABEIAAgAEAMBEQACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAABB//EABYBAQEBAAAAAAAAAAAAAAAAAAEEBf/aAAwDAQACEAMQAAABv9mmJ//EABgQAAMBAQAAAAAAAAAAAAAAAAIDBgQH/9oACAEBAAEFAkT8AaNU9z4Mv//EAB4RAAEDBAMAAAAAAAAAAAAAAAECESEABAUSFDKx/9oACAEDAQE/AeXkAVtswMAo8ihe5EqT3AcRoa//xAAiEQABAgMJAAAAAAAAAAAAAAABAAIEBSEDERITIkNhceH/2gAIAQIBAT8BdGzMOIGaKnb8TI2Z4mgm1NRfo56X/8QAHhAAAQQCAwEAAAAAAAAAAAAAAQIDBBIRIQATIlH/2gAIAQEABj8CYLsiFdTaCrM06VUWz61vklbciF2JZcLeJhJuEmuPX3n/xAAaEAEAAwADAAAAAAAAAAAAAAABABEhMUFR/9oACAEBAAE/IcjClKNTzaz2UsWStIDK4o7n/9oADAMBAAIAAwAAABAP/8QAGxEBAQACAwEAAAAAAAAAAAAAAREhMQBxgbH/2gAIAQMBAT8QHyoCApYQZIS6nhKtYSCGpunWPq8//8QAGxEBAQACAwEAAAAAAAAAAAAAAREhQQAxgeH/2gAIAQIBAT8QYkAsCQs0uMD84oiJVJIPKd9ze3n/xAAXEAEBAQEAAAAAAAAAAAAAAAABEQAh/9oACAEBAAE/EGyHoIyjGQQcEgGYlL2TjaiEGkI7/9k=
 ---
+ 
+# Unattended Upgrades with Email Notifications: Keeping Your Raspberry Pi Secure
 
-# Keeping Your Raspberry Pi Secure with Unattended Upgrades
+In my last post, I discussed [setting up an SFTP server on Raspberry Pi for Obsidian notes.](https://www.matt-black.tech/posts/SyncFTP-Obsidian/). 
 
-In my previous post, I talked about [Setting up an SFTP Server on Raspberry Pi for Obsidian Sync.](https://www.matt-black.tech/posts/SyncFTP-Obsidian/) While it's easy to keep your Pi's software up-to-date manually, I thought it would be nice to automate the process to save time and effort. 
+In this post, we’ll cover installing and configuring [unattended-upgrades](https://wiki.debian.org/UnattendedUpgrades) to harden your Pi against attacks. We’ll also set up [Postfix](https://wiki.debian.org/Postfix) to email notifications when updates occur.
 
-To prevent hackers from exploiting old software flaws, it is best to install security patches as soon as they are released. The ‘unattended-upgrades’ package on Debian-based systems (like Raspberry Pi OS) does this automatically for you.
+When running a server, it is important to keep the server’s security patches up-to-date. Old, unpatched software leaves systems vulnerable. The 'unattended-upgrades' package on Debian-based systems like Raspberry Pi OS can automatically install security patches. 
 
-In this post, we'll go over how to install and configure unattended-upgrades to help harden your Raspberry Pi against attacks. We'll also set up the postfix mail transfer agent to send email notifications when updates are performed.
-
-**Caution** - While automatic updates can be convenient, they also come with risks like unwanted changes or new software bugs. You should check your system’s status and updates regularly, for example, by using log files or notification systems. You should also backup your data often, especially in production environments.
+**Caution**: Although convenient, automatically updating has risks like unwanted changes or new bugs. Monitor your system's status and updates regularly via logs or notifications. And frequently backup data, especially on production systems.
 
 ---
 
@@ -172,21 +172,21 @@ To use Gmail for our email notifications, we will need to get a Gmail App Passwo
 
 ### 12. Install Postfix for Email Notifications
 
-To enable the email notifications from unattended-upgrades, we'll be using the [postfix](https://wiki.debian.org/Postfix) application. 
+To enable the email notifications from unattended-upgrades, we'll be using the [Postfix](https://wiki.debian.org/Postfix) application. 
 - Postfix is a mail transfer agent (MTA) that can be used to send and receive email.
-- For our purposes, we will only configure postfix to send email notifications from unattended-upgrades. 
-- When installing postfix, you'll be prompted to enter your system mail name, which should be your Pi's domain name. Use the following terminal command to get this before installing postfix and jot it down for later use:
+- For our purposes, we will only configure Postfix to send email notifications from unattended-upgrades. 
+- When installing Postfix, you'll be prompted to enter your system mail name, which should be your Pi's domain name. Use the following terminal command to get this before installing Postfix and jot it down for later use:
 
 ```bash
 hostname -f
 ```
 
-- To install postfix, run the following command in your terminal:
+- To install Postfix, run the following command in your terminal:
 
 ```bash
 sudo apt install postfix -y
 ```
-During the postfix configuration select **"Internet Site"**, and specify your Raspberry Pi's domain (from above) as the "mail name."
+During the Postfix configuration select **"Internet Site"**, and specify your Raspberry Pi's domain (from above) as the "mail name."
 
 - *__TIP__ - I found the following guide from Tony Florida to be very helpful for learning how to set this up: (https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)*
 
@@ -206,11 +206,15 @@ sudo touch /etc/postfix/sasl/sasl_passwd
 - And add your email address and Google App password to the sasl_passwd file by running the following command in your terminal:
 ```bash
 sudo nano /etc/postfix/sasl/sasl_passwd
-[smtp.gmail.com]:587 your-email@gmail.com:your-app-password 
 ```
+- Then add the following line to the sasl_passwd file:
+```
+[smtp.gmail.com]:587 your-email@gmail.com:your-app-password
+```
+
 **Note** - there should be no spaces between the characters in your Gmail App Password.
 
-### 14. Next, we will use the [postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
+### 14. Next, we will use the [Postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
 - To do this, run the following command in your terminal:
 
 ```bash
@@ -219,7 +223,7 @@ sudo postmap /etc/postfix/sasl/sasl_passwd
 - If you look in the directory at /etc/postfix/sasl, you should now see a new file named sasl_passwd.db.
 - This file is used by Postfix to authenticate with Gmail when sending email. ([See this guide for more details.](https://tecadmin.net/postfix-configure-sasl-authentication-for-remote-smtp/))
 
-### 15. Now we need to change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands in your terminal:
+### 15. Now, change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands (separately) in your terminal:
 
 ```bash
 sudo chown root:root /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
@@ -228,9 +232,9 @@ sudo chmod 0600 /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
 
 We're almost done, I promise...hang in there! 😊 
 
-### 16. Now we need to configure the main postfix configuration file:
+### 16. Now we need to configure the main Postfix configuration file:
 
-The main configuration file for postfix is in the following directory: /etc/postfix/main.cf. To open the main.cf file in a terminal-based text editor such as nano, run the following command:
+The main configuration file for Postfix is in the following directory: /etc/postfix/main.cf. To open the main.cf file in a terminal-based text editor such as nano, run the following command:
 
 ```bash
 sudo nano /etc/postfix/main.cf
@@ -253,7 +257,7 @@ smtp_tls_security_level = encrypt
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 ```
 
-### 18. Restart postfix with the following command:
+### 18. Restart Postfix with the following command:
 
 ```bash
 sudo systemctl restart postfix
@@ -289,7 +293,7 @@ mail returned: 0
 
 ## Conclusion
 
-Keeping your Linux systems up-to-date with the latest security patches is vital for defense against attacks. Manually applying updates is time-consuming and inefficient. Using the unattended-upgrades package automates the process of installing security updates in the background and makes the process much more efficient. Additionally, configuring email notifications via postfix provides visibility into update activity.
+Keeping your Linux systems up-to-date with the latest security patches is vital for defense against attacks. Manually applying updates is time-consuming and inefficient. Using the unattended-upgrades package automates the process of installing security updates in the background and makes the process much more efficient. Additionally, configuring email notifications via Postfix provides visibility into update activity.
 
 I hope this guide was helpful! If you have any questions or comments, please feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/matthewblack/) or by [email](mailto:mblackonline.git@gmail.com). 
 
