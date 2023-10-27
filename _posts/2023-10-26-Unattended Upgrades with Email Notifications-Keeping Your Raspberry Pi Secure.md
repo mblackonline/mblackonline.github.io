@@ -115,7 +115,7 @@ Unattended-Upgrade::Automatic-Reboot-Time "02:00";
 ```bash
 sudo apt install powermgmt-base
 ``` 
-Then, in the `50unattended-upgrades file`, uncomment the line `Unattended-Upgrade::OnlyOnACPower "true";` to enforce this setting."
+Then, in the `50unattended-upgrades` file, uncomment the line `Unattended-Upgrade::OnlyOnACPower "true";` to enforce this setting."
 
 ### 9. Test Unattended Upgrades
 To test unattended-upgrades, run the following command in your terminal:
