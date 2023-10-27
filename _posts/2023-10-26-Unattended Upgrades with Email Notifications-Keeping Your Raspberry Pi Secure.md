@@ -21,7 +21,7 @@ In this post, we’ll cover installing and configuring unattended-upgrades, and 
 #### **Prerequisites/Assumptions in this guide:**
   * You have a Raspberry Pi running Raspberry Pi OS.
   * You already have SSH access to your Pi (or you can access the Pi terminal by some other login method like direct access or VNC).
-  * You're Raspberry Pi is on the same local area network as the computer you're using to access it.
+  * Your Raspberry Pi is on the same local area network as the computer you're using to access it.
   * You have a Gmail account to use for email notifications.
   * You have a basic understanding of how to use the Linux terminal.
 
