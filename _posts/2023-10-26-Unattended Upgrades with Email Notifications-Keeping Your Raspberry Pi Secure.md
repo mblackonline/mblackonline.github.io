@@ -148,7 +148,7 @@ To receive email notifications when updates are performed, add your email addres
 ```bash
 Unattended-Upgrade::Mail "your-email-address@example.com";
 ```
-### 10. Enable Email Notifications to be sent when updates are performed. You can set this value to Set this value to one of: "always", "only-on-error" or "on-change":
+### 10. Enable Email Notifications to be sent when updates are performed. You can set this value to one of these: "always", "only-on-error" or "on-change":
 ```bash
 Unattended-Upgrade::MailReport "always";
 ```
