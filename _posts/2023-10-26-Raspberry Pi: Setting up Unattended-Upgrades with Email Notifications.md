@@ -32,6 +32,7 @@ The unattended-upgrades package provides automatic package updates for Debian-ba
 #### ***---***  **Prerequisites/Assumptions in this guide:**
   * You have a Raspberry Pi running Raspberry Pi OS.
   * You already have SSH access to your Pi (or you can access the Pi terminal by some other login method like direct access or VNC).
+  * You're Raspberry Pi is on the same local area network as the computer you're using to access it.
   * You have a Gmail account to use for email notifications.
   * You have a basic understanding of how to use the Linux terminal.
 
@@ -40,7 +41,8 @@ The unattended-upgrades package provides automatic package updates for Debian-ba
 ### 1. Login into the Pi via SSH (or any other means that you find convenient)
 
 ```bash
-ssh your-Pi-userName@raspberrypi-hostname
+# Example: 
+ssh pi@raspberrypi
 ```
 **Note**: The default user should be `pi`, and the default hostname is typically `raspberrypi`. It would be wise to change these to something else if you haven't already done so. You could also use the Pi's IPv4 address or its [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) instead of the hostname if you prefer.
 
@@ -48,7 +50,7 @@ ssh your-Pi-userName@raspberrypi-hostname
 ```bash
 sudo apt update && sudo apt upgrade -y && sudo reboot
 ```
-*This will update your existing packages and reboot the Pi. Wait for the Pi to reboot and then log back in using the above SSH commands.*
+*This will update your existing packages and reboot the Pi. Wait for the Pi to reboot and then log back in via SSH.*
 
 ### 3. Install Unattended Upgrades and Power Management Base
 
