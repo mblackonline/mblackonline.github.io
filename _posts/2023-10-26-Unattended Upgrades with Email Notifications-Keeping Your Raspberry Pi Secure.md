@@ -41,12 +41,12 @@ sudo apt update && sudo apt upgrade -y && sudo reboot
 ```
 *This will update your existing packages and reboot the Pi. Wait for the Pi to reboot and then log back in via SSH.*
 
-### 3. Install Unattended Upgrades and Power Management Base
+### 3. Install Unattended Upgrades
 
-Installing unattended-upgrades and power management is simple - just run the following command in your terminal:
+Installing unattended-upgrades is simple, just run the following command in your terminal:
 
 ```bash
-sudo apt install unattended-upgrades -y && sudo apt install powermgmt-base -y
+sudo apt install unattended-upgrades -y
 ```
 
 ### 4. Enable Unattended Upgrades
