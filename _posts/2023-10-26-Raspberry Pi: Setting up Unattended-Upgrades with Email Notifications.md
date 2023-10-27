@@ -18,18 +18,7 @@ In this post, we’ll cover installing and configuring unattended-upgrades, and 
 
 ---
 
-## An Overview of Unattended Upgrades
-
-The unattended-upgrades package provides automatic package updates for Debian-based systems (e.g. Raspberry Pi OS, Ubuntu, Linux Mint, Zorin OS, etc.). Once enabled and properly configured, it will automatically download and install apt package updates without the need for user interaction.
-
-#### **Some key features of unattended-upgrades:**
-
-- Can focus solely on security updates and ignore non-security packages, or can be configured to install all updates.
-- Can automatically reboot the server after installing updates, if needed.
-- Email notifications can be provided to give update status and details.
-- Blacklisting allows excluding certain packages from auto-updates.
-
-#### ***---***  **Prerequisites/Assumptions in this guide:**
+#### **Prerequisites/Assumptions in this guide:**
   * You have a Raspberry Pi running Raspberry Pi OS.
   * You already have SSH access to your Pi (or you can access the Pi terminal by some other login method like direct access or VNC).
   * You're Raspberry Pi is on the same local area network as the computer you're using to access it.
@@ -70,7 +59,7 @@ At the confirmation prompt, select **Yes** to enable unattended upgrades.
 
 ### 5. Configure Unattended Upgrades
 
-The main configuration file for unattended-upgrades is located at /etc/apt/apt.conf.d/50unattended-upgrades. To open the 50unattended-upgrades file in a terminal-based text editor such as nano, run the following command:
+The main configuration file for unattended-upgrades is located at /etc/apt/apt.conf.d/50unattended-upgrades. To open the `50unattended-upgrades` file in a terminal-based text editor such as nano, run the following command:
 
 ```bash
 sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
@@ -79,7 +68,7 @@ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 
 ### 6. Select Which Updates To Activate
 
-To enable automatic package downloads and installation of security updates, look for the below line in the 50unattended-upgrades file and make your settings match the following:
+To enable automatic package downloads and installation of security updates, look for the below line in the `50unattended-upgrades` file and make your settings match the following:
 
 ```bash
 Unattended-Upgrade::Origins-Pattern {
@@ -110,7 +99,7 @@ Unattended-Upgrade::Origins-Pattern {
 
 ### 7. Enable Auto-Reboot After Updates 
 
-To automatically reboot the server after updates that require it, find the following line in the 50unattended-upgrades file and make your settings match the following:
+To automatically reboot the server after updates that require it, find the following line in the `50unattended-upgrades` file and make your settings match the following:
 
 ```bash
 Unattended-Upgrade::Automatic-Reboot "true";
@@ -157,7 +146,7 @@ The list of kept packages can't be calculated in dry-run mode.
 
 ### 10. Enable Email Notifications
 
-To receive email notifications when updates are performed, add your email address to the following line in the 50unattended-upgrades file:
+To receive email notifications when updates are performed, add your email address to the following line in the `50unattended-upgrades` file:
 
 ```bash
 Unattended-Upgrade::Mail "your-email-address@example.com";
@@ -179,7 +168,7 @@ To enable the email notifications from unattended-upgrades, we'll be using the [
 hostname -f
 ```
 
-- To install Postfix, run the following command in your terminal:
+- To install Postfix, run the following command:
 
 ```bash
 sudo apt install postfix -y
@@ -197,11 +186,11 @@ sudo mkdir -p /etc/postfix/sasl/
 ```
 - *The -p option tells mkdir to create parent directories as needed.*
 
-- Now create a file named `sasl_passwd` in the /etc/postfix/sasl/ directory by running the following command in your terminal:
+- Now create a file named `sasl_passwd` in the /etc/postfix/sasl/ directory by running the following command:
 ```bash
 sudo touch /etc/postfix/sasl/sasl_passwd
 ```
-- And add your email address and Google App password to the sasl_passwd file by running the following command in your terminal:
+- And add your email address and Google App password to the sasl_passwd file by running the following command:
 ```bash
 sudo nano /etc/postfix/sasl/sasl_passwd
 ```
@@ -213,7 +202,7 @@ sudo nano /etc/postfix/sasl/sasl_passwd
 **Note** - there should be no spaces between the characters in your Gmail App Password.
 
 ### 14. Next, we will use the [Postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
-- To do this, run the following command in your terminal:
+- To do this, run the following command:
 
 ```bash
 sudo postmap /etc/postfix/sasl/sasl_passwd
@@ -221,7 +210,7 @@ sudo postmap /etc/postfix/sasl/sasl_passwd
 - If you look in the directory at /etc/postfix/sasl, you should now see a new file named sasl_passwd.db.
 - This file is used by Postfix to authenticate with Gmail when sending email. ([See this guide for more details.](https://tecadmin.net/postfix-configure-sasl-authentication-for-remote-smtp/))
 
-### 15. Now, change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands (separately) in your terminal:
+### 15. Now, change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands (separately):
 
 ```bash
 sudo chown root:root /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
@@ -261,7 +250,7 @@ smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 sudo systemctl restart postfix
 ```
 
-### 19. Now - let's test to see if unattended-upgrades can send email notifications. To do this, run the following command in your terminal:
+### 19. Now - let's test to see if unattended-upgrades can send email notifications. To do this, run the following command:
 
 ```bash
 sudo unattended-upgrades -d
