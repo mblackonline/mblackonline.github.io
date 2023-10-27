@@ -95,7 +95,7 @@ Unattended-Upgrade::Origins-Pattern {
         "origin=Debian,codename=${distro_codename},label=Debian";  // this line enables non-security updates labeled as 'Debian' from the Debian archive
         "origin=Debian,codename=${distro_codename},label=Debian-Security"; // this line enables security updates from the Debian archive
         "origin=Debian,codename=${distro_codename}-security,label=Debian-Security"; // this line enables security updates from the Debian archive
-        "origin=Raspbian,codename=${distro_codename},label=Raspbian"; // this line enables non-security updates labeled as 'Raspbian' from the Raspbian archiv
+        "origin=Raspbian,codename=${distro_codename},label=Raspbian"; // this line enables non-security updates labeled as 'Raspbian' from the Raspbian archive
         "origin=Raspberry Pi Foundation,codename=${distro_codename},label=Raspberry Pi Foundation"; // this line enables non-security updates labeled as 'Raspberry Pi Foundation' from the Raspberry Pi Foundation archive
 
         // Archive or Suite based matching:
