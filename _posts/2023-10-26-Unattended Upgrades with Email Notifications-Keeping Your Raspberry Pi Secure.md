@@ -161,7 +161,7 @@ To use Gmail for our email notifications, we will need to get a Gmail App Passwo
 
 ### 12. Install Postfix for Email Notifications
 
-To enable the email notifications from unattended-upgrades, we'll be using the [Postfix](https://wiki.debian.org/Postfix) application. Postfix is a mail transfer agent (MTA) that can be used to send and receive email.For our purposes, we will only configure Postfix to send email notifications from unattended-upgrades.
+To enable the email notifications from unattended-upgrades, we'll be using the [Postfix](https://wiki.debian.org/Postfix) application. Postfix is a mail transfer agent (MTA) that can be used to send and receive email. For our purposes, we will only configure Postfix to send email notifications from unattended-upgrades.
 
 --- 
 - When installing Postfix, you'll be prompted to enter your system mail name, which should be your Pi's domain name. Use the following terminal command to get this before installing Postfix and jot it down for later use:
