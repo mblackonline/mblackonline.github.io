@@ -57,7 +57,7 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades
 ```
 At the confirmation prompt, select **Yes** to enable unattended upgrades.
 
-### 5. Configure Unattended Upgrades
+### 5. Open the Unattended Upgrades Configuration File
 
 The main configuration file for unattended-upgrades is located at /etc/apt/apt.conf.d/50unattended-upgrades. To open the `50unattended-upgrades` file in a terminal-based text editor such as nano, run the following command:
 
@@ -110,9 +110,14 @@ Be aware that this will reboot your server without warning, so plan maintenance 
 ```bash
 Unattended-Upgrade::Automatic-Reboot-Time "02:00";
 ```
+### 8. **Optional - install powermgmt-base**: 
+- If your Pi is run on battery power, you can configure unattended-upgrades to only run when it's connected to AC power. This requires the powermgmt-base package. You can install it with: 
+```bash
+sudo apt install powermgmt-base
+``` 
+Then, in the `50unattended-upgrades file`, uncomment the line `Unattended-Upgrade::OnlyOnACPower "true";` to enforce this setting."
 
-
-### 8. Test Unattended Upgrades
+### 9. Test Unattended Upgrades
 To test unattended-upgrades, run the following command in your terminal:
 
 ```bash
@@ -134,6 +139,7 @@ Packages blacklist due to conffile prompts: []
 No packages found that can be upgraded unattended and no pending auto-removals
 The list of kept packages can't be calculated in dry-run mode.
 ```
+---
 
 **NOTE** - if you do not want to enable email notifications, you can stop right here. But if you want to enable email notifications, keep reading...
 
@@ -141,25 +147,25 @@ The list of kept packages can't be calculated in dry-run mode.
 ---
 # Part II. Configuring Email Notifications with Postfix
 
-### 9. Enable Email Notifications
+### 10. Enable Email Notifications
 
 To receive email notifications when updates are performed, add your email address to the following line in the `50unattended-upgrades` file (using your real email address):
 
 ```bash
 Unattended-Upgrade::Mail "your-email-address@example.com";
 ```
-### 10. Set the frequency of email notifications. 
+### 11. Set the frequency of email notifications. 
 > You can choose how often you receive email notifications from the unattended-upgrades script by setting your notification preference to one of these options: “always”, “only-on-error”, or “on-change”. We will set our notification preference to “always” to receive an email notification every time the script is run.
 ```bash
 Unattended-Upgrade::MailReport "always";
 ```
 
-### 11. Create an App Password for Gmail
+### 12. Create an App Password for Gmail
 To use Gmail for our email notifications, we will need to get a Gmail App Password. To do this, follow this guide from Google: [How to generate App Passwords](https://knowledge.workspace.google.com/kb/how-to-generate-an-app-passwords-000009237). 
 
 **Important**- Be sure to copy the password to a safe place once it is generated, as you will not be able to view it again after closing the window.
 
-### 12. Install Postfix for Email Notifications
+### 13. Install Postfix for Email Notifications
 
 To enable the email notifications from unattended-upgrades, we'll be using the [Postfix](https://wiki.debian.org/Postfix) application. Postfix is a mail transfer agent (MTA) that can be used to send and receive email. For our purposes, we will only configure Postfix to send email notifications from unattended-upgrades.
 
@@ -180,7 +186,7 @@ sudo apt install postfix -y
 
 TIP: I found the following guide from Tony Florida to be very helpful for learning how to set this up [(https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)](https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)
 
-### 13. Configure settings for [Simple Authentication and Security Layer (SASL).](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) 
+### 14. Configure settings for [Simple Authentication and Security Layer (SASL).](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) 
 *SASL provides a method for adding authentication support for Postfix to allow us to send email through our Gmail account.*
 
 - First, check to make sure that the `/etc/postfix/sasl/` directory exists by running `ls -la /etc/postfix` in your terminal. You should see the sasl directory in the output. If the directory doesn’t exist, you can create it using the mkdir command as follows:
@@ -203,7 +209,7 @@ sudo nano /etc/postfix/sasl/sasl_passwd
     ```
 
 
-### 14. Next, we will use the [Postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
+### 15. Next, we will use the [Postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
 - To do this, run the following command:
 
 ```bash
@@ -212,7 +218,7 @@ sudo postmap /etc/postfix/sasl/sasl_passwd
 - If you look in the directory at /etc/postfix/sasl, you should now see a new file named sasl_passwd.db.
 - This file is used by Postfix to authenticate with Gmail when sending email. ([See this guide for more details.](https://tecadmin.net/postfix-configure-sasl-authentication-for-remote-smtp/))
 
-### 15. Now, change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands (separately):
+### 16. Now, change the permissions to make sure that only the root user can read or write to the sasl_passwd and sasl_passwd.db files. To do this, run the following commands (separately):
 
 ```bash
 sudo chown root:root /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
@@ -221,7 +227,7 @@ sudo chmod 0600 /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
 
 We're almost done, I promise...hang in there! 😊 
 
-### 16. Now we need to configure the main Postfix configuration file:
+### 17. Now we need to configure the main Postfix configuration file:
 
 The main configuration file for Postfix is in the following directory: /etc/postfix/main.cf. To open the main.cf file in a terminal-based text editor such as nano, run the following command:
 
@@ -235,7 +241,7 @@ Then find the following `relayhost =` line, and change your settings to match th
 relayhost = [smtp.gmail.com]:587
 ```
 
-### 17. Add the following lines to the bottom of the main.cf file (credit to Tony Florida's guide [here](https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)):
+### 18. Add the following lines to the bottom of the main.cf file (credit to Tony Florida's guide [here](https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)):
 
 ```bash
 # Enable SASL authentication
@@ -246,18 +252,18 @@ smtp_tls_security_level = encrypt
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 ```
 
-### 18. Restart Postfix with the following command:
+### 19. Restart Postfix with the following command:
 
 ```bash
 sudo systemctl restart postfix
 ```
 
-### 19. Now - let's test to see if unattended-upgrades can send email notifications. To do this, run the following command:
+### 20. Now - let's test to see if unattended-upgrades can send email notifications. To do this, run the following command:
 
 ```bash
 sudo unattended-upgrades -d
 ```
-> *For this to work, you will need the notification preference set to 'always' (see step 10).*
+> *For this to work, you will need the notification preference set to 'always' (see step 11).*
 
 You should see output that looks like the following:
 
