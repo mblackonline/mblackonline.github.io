@@ -160,9 +160,9 @@ To use Gmail for our email notifications, we will need to get a Gmail App Passwo
 
 ### 12. Install Postfix for Email Notifications
 
-To enable the email notifications from unattended-upgrades, we'll be using the [Postfix](https://wiki.debian.org/Postfix) application. 
-- Postfix is a mail transfer agent (MTA) that can be used to send and receive email.
-- For our purposes, we will only configure Postfix to send email notifications from unattended-upgrades. 
+To enable the email notifications from unattended-upgrades, we'll be using the [Postfix](https://wiki.debian.org/Postfix) application. Postfix is a mail transfer agent (MTA) that can be used to send and receive email.For our purposes, we will only configure Postfix to send email notifications from unattended-upgrades.
+
+--- 
 - When installing Postfix, you'll be prompted to enter your system mail name, which should be your Pi's domain name. Use the following terminal command to get this before installing Postfix and jot it down for later use:
 
 ```bash
@@ -174,33 +174,33 @@ hostname -f
 ```bash
 sudo apt install postfix -y
 ```
-During the Postfix configuration select **"Internet Site"**, and specify your Raspberry Pi's domain (from above) as the "mail name."
+> During the Postfix configuration select **"Internet Site"**, and specify your Raspberry Pi's domain (from above) as the "mail name."
 
-- *__TIP__ - I found the following guide from Tony Florida to be very helpful for learning how to set this up: (https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)*
 
-### 13. Configure the settings for [Simple Authentication and Security Layer (SASL)](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) 
-- *SASL provides a method for adding authentication support for Postfix to allow us to send email through our Gmail account.*
+TIP: I found the following guide from Tony Florida to be very helpful for learning how to set this up [(https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)](https://tonyteaches.tech/postfix-gmail-smtp-on-ubuntu/)
 
-**Check to make sure that the /etc/postfix/sasl/ directory exists by running `ls -la /etc/postfix` in your terminal.** You should see the sasl directory in the output. If the directory doesn’t exist, you can create it using the mkdir command as follows:
+### 13. Configure settings for [Simple Authentication and Security Layer (SASL).](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) 
+*SASL provides a method for adding authentication support for Postfix to allow us to send email through our Gmail account.*
+
+- First, check to make sure that the `/etc/postfix/sasl/` directory exists by running `ls -la /etc/postfix` in your terminal. You should see the sasl directory in the output. If the directory doesn’t exist, you can create it using the mkdir command as follows:
 ```bash
 sudo mkdir -p /etc/postfix/sasl/
 ```
-- *The -p option tells mkdir to create parent directories as needed.*
+> *The -p option tells mkdir to create parent directories as needed.*
 
 - Now create a file named `sasl_passwd` in the /etc/postfix/sasl/ directory by running the following command:
 ```bash
 sudo touch /etc/postfix/sasl/sasl_passwd
 ```
-- And add your email address and Google App password to the sasl_passwd file by running the following command:
+- Next, add your email address and Google App password to the sasl_passwd file by running the following command:
 ```bash
 sudo nano /etc/postfix/sasl/sasl_passwd
 ```
-- Then add the following line to the sasl_passwd file:
-```
-[smtp.gmail.com]:587 your-email@gmail.com:your-app-password
-```
+> - Then add the following line to the sasl_passwd file (using your actual email and App Password). **Note** - there should be no spaces between the characters in your Gmail App Password:
+    ```
+    [smtp.gmail.com]:587 your-email@gmail.com:your-app-password
+    ```
 
-**Note** - there should be no spaces between the characters in your Gmail App Password.
 
 ### 14. Next, we will use the [Postmap](https://man.archlinux.org/man/postmap.1.en) command to create a database file from the sasl_passwd file we just created. 
 - To do this, run the following command:
