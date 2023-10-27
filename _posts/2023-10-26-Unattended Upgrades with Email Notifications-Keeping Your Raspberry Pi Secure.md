@@ -110,12 +110,9 @@ Be aware that this will reboot your server without warning, so plan maintenance 
 ```bash
 Unattended-Upgrade::Automatic-Reboot-Time "02:00";
 ```
-### 8. Enable Email Notifications to be sent when updates are performed. You can set this value to Set this value to one of: "always", "only-on-error" or "on-change":
-```bash
-Unattended-Upgrade::MailReport "always";
-```
 
-### 9. Test Unattended Upgrades
+
+### 8. Test Unattended Upgrades
 To test unattended-upgrades, run the following command in your terminal:
 
 ```bash
@@ -144,12 +141,16 @@ The list of kept packages can't be calculated in dry-run mode.
 ---
 # Part II. Configuring Email Notifications with Postfix
 
-### 10. Enable Email Notifications
+### 9. Enable Email Notifications
 
 To receive email notifications when updates are performed, add your email address to the following line in the `50unattended-upgrades` file:
 
 ```bash
 Unattended-Upgrade::Mail "your-email-address@example.com";
+```
+### 10. Enable Email Notifications to be sent when updates are performed. You can set this value to Set this value to one of: "always", "only-on-error" or "on-change":
+```bash
+Unattended-Upgrade::MailReport "always";
 ```
 
 ### 11. Create an App Password for Gmail
