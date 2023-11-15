@@ -1,0 +1,97 @@
+---
+layout: post
+title: Windows Subsystem for Linux (WSL2) Installation Guide
+date: 2023-11-14 12:54:00 -0400
+categories: wsl windows subsystem for linux
+pin: false
+tags: linux wsl 'windows subsystem for linux'
+image: 
+  path: /assets/img/posts/WSL2.jpg
+  lqip: data:image/jpeg;base64,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d3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6R0lNUD0iaHR0cDovL3d3dy5naW1wLm9yZy94bXAvIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9ImdpbXA6ZG9jaWQ6Z2ltcDo5NDVhNTU4My02NDMyLTRmOTYtYTEwZi04MzhjMDNiZmM1MjkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ZjY4Nzg0ZmUtYjI2OC00OWJkLTlmMTktYjZmNzUxOGExMTFkIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6YmY3ZTZkMzAtOGZiYS00YzA3LWI3OTEtZmU1NzUwMGJkYWZjIiBkYzpGb3JtYXQ9ImltYWdlL2pwZWciIEdJTVA6QVBJPSIyLjAiIEdJTVA6UGxhdGZvcm09IldpbmRvd3MiIEdJTVA6VGltZVN0YW1wPSIxNjk5OTEzODU0ODE3MDYwIiBHSU1QOlZlcnNpb249IjIuMTAuMjgiIHhtcDpDcmVhdG9yVG9vbD0iR0lNUCAyLjEwIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0OmNoYW5nZWQ9Ii8iIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YmY4NjdhZWItZTVlOS00OTljLThjOTQtZDVmZTAzOTRlMTgyIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJHaW1wIDIuMTAgKFdpbmRvd3MpIiBzdEV2dDp3aGVuPSIyMDIzLTExLTEzVDE3OjEyOjMxIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6Y2hhbmdlZD0iLyIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOWZlNjJlNS03Mzk1LTQxOWYtODQxNS01ZWEyYjE1MGRkOGQiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkdpbXAgMi4xMCAoV2luZG93cykiIHN0RXZ0OndoZW49IjIwMjMtMTEtMTNUMTc6MTc6MzQiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDw/eHBhY2tldCBlbmQ9InciPz7/4gKwSUNDX1BST0ZJTEUAAQEAAAKgbGNtcwQwAABtbnRyUkdCIFhZWiAH5wALAA0AFgAPABthY3NwTVNGVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1kZXNjAAABIAAAAEBjcHJ0AAABYAAAADZ3dHB0AAABmAAAABRjaGFkAAABrAAAACxyWFlaAAAB2AAAABRiWFlaAAAB7AAAABRnWFlaAAACAAAAABRyVFJDAAACFAAAACBnVFJDAAACFAAAACBiVFJDAAACFAAAACBjaHJtAAACNAAAACRkbW5kAAACWAAAACRkbWRkAAACfAAAACRtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACQAAAAcAEcASQBNAFAAIABiAHUAaQBsAHQALQBpAG4AIABzAFIARwBCbWx1YwAAAAAAAAABAAAADGVuVVMAAAAaAAAAHABQAHUAYgBsAGkAYwAgAEQAbwBtAGEAaQBuAABYWVogAAAAAAAA9tYAAQAAAADTLXNmMzIAAAAAAAEMQgAABd7///MlAAAHkwAA/ZD///uh///9ogAAA9wAAMBuWFlaIAAAAAAAAG+gAAA49QAAA5BYWVogAAAAAAAAJJ8AAA+EAAC2xFhZWiAAAAAAAABilwAAt4cAABjZcGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltjaHJtAAAAAAADAAAAAKPXAABUfAAATM0AAJmaAAAmZwAAD1xtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAEcASQBNAFBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEL/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wgARCAAIABADAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgn/xAAVAQEBAAAAAAAAAAAAAAAAAAAGB//aAAwDAQACEAMQAAABouwnQ0ZTf//EABYQAQEBAAAAAAAAAAAAAAAAAAUDBv/aAAgBAQABBQJ9pQ9WLOspvv/EACIRAAEDAwMFAAAAAAAAAAAAAAIBAwQGEUEABRMSIiQxUv/aAAgBAwEBPwHdtwrhmuI8BiN0Uu8AecEQpC8uWjIS7L/ZJZM6aBzkVDvZETFk9a//xAAgEQABBAEEAwAAAAAAAAAAAAABAgMEETEABQZBEhMh/9oACAECAQE/Adugcbf445KdfQrd0eVxlSEtGhggKz86Bs6cLXqFABRJ7s51/8QAHxAAAQMEAwEAAAAAAAAAAAAAAQIDEQQFEiEAFEET/9oACAEBAAY/AnDTt4MEgoe6y39mJ0jfvLdTMZP2Lrfe4VBp0oShZScUBZ3M+CYHP//EABoQAQACAwEAAAAAAAAAAAAAAAERMQAhQXH/2gAIAQEAAT8hHsB2wjoW3zzKyAZFvATEmrEnP//aAAwDAQACAAMAAAAQi//EABkRAQEBAQEBAAAAAAAAAAAAAAERMQAhQf/aAAgBAwEBPxBVrlCUHsZVDbi8nKUVqhFVyNEqfLm9/8QAGhEBAQEAAwEAAAAAAAAAAAAAAREhMUFhkf/aAAgBAgEBPxCpQZaZngmLYcCJAoQOYDFvU+zPf//EABgQAQEBAQEAAAAAAAAAAAAAAAERIQBB/9oACAEBAAE/EIw9FloRWw9NYOuvxTDA9K0m8D//2Q==
+---
+## Introduction
+
+Windows Subsystem for Linux (WSL) is a powerful tool that allows you to run a Linux environment directly on Windows, without the need for a dual-boot setup or other solution like VirtualBox. This means you can enjoy the flexibility and power of Linux, while still being able to use your Windows applications and tools. This can be particularly useful if you're working on a project that requires specific Linux tools. 
+
+In the below guide, I will walk you through the process of installing WSL on your Windows machine. I will also give some tips on how to get started with WSL and additional resources for troubleshooting. 
+
+## Prerequisites:
+1. A computer running Windows 11, or Windows 10 (Build 19041) or higher.
+   To confirm your Windows version, follow these steps:  
+
+   a). Press the `Windows` (⊞)` + r` keys on your keyboard.  
+   b). Type `winver` into the dropdown prompt, and select 'Ok'.  
+   c). In the pop-up window, confirm that you are on Build 19041 or higher for Windows 10.  
+  - *If you are using Windows 11, you should be good to go.*
+
+2. Ensure that your computer is capable of virtualization and that it is enabled on the system. You can check this by following these steps:
+
+    a). Press `Ctrl + Shift + Esc` on your keyboard to open the Windows Task Manager.  
+    b). Within the Windows Task Manager, go to the "Performance" tab and select "CPU".  
+    c). To the right, under the CPU Utilization graph, there is a list of various CPU details. Find the detail for "Virtualization" and make sure it shows as "Enabled."  If virtualization is not enabled, you'll need to go into your system UEFI/BIOS to enable it. This process varies by manufacturer, so you may need to refer to your system’s documentation or seek help from the manufacturer’s support site to determine how to do it.
+
+## Install WSL2 
+1. Open PowerShell as Administrator. 
+- You can do this by right-clicking on the Start Menu, and then selecting 'Windows PowerShell (Admin)' from the available options.
+2. With PowerShell opened as Administrator, enter the following command:
+  ```
+  wsl --install
+  ```
+This command *__should__* enable the necessary features and install the Ubuntu 22.04 distribution of Linux. If the command does not work for you, see the [Troubleshooting tips](#troubleshooting-tips) below.  
+
+4. Create a user and password:  
+After you run the above command, it should open a terminal and prompt you to create a username and a password. These will be your credentials for the Linux distribution. (Note: for security reasons, the password does not show text on the terminal when you type it in).
+
+5. After you create your username and password, you should be presented with the Linux terminal prompt.
+
+6. Run the following commands in your Ubuntu terminal to update apt package manager and upgrade your system.
+```
+sudo apt update && sudo apt upgrade -y
+```
+7. You can now start using Linux commands. Here are some Linux resources to get you started:
+- [Introduction to Bash, from Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/bash-introduction/)
+- [The Linux Journey learning guide (available in multiple languages)](https://linuxjourney.com/)
+- [Introduction to Linux, from the Linux Foundation. (Spanish version available)](https://training.linuxfoundation.org/training/introduction-to-linux/?code=xhH6c13cQ_qE7wA2FQu05lLg_AXas-XKxZ62vB_Z9R5Fl&state=WXFaZjdKb0EtWjVSUXhpWkgzck51NjM2UWJrdXBsSHRGa1hGZkM3ZFBMTA%3D%3D)
+
+### <u>Some additional tips to make it easier to get started:</u>
+- Reopening your Ubuntu system:
+    - You can reopen the WSL terminal at any time by searching for 'Ubuntu' in the Windows search bar, and opening the Ubuntu app.
+    - You can also open it from PowerShell by typing `wsl` or `ubuntu` in the terminal and pressing enter. 
+    - The Ubuntu terminal can also be found in your Start Menu.
+
+- If you need to shutdown WSL/Ubuntu, you can do so by opening PowerShell and typing the following command: 
+```
+wsl --shutdown
+```
+
+- To access your Windows file system in your Ubuntu terminal, you need to navigate to `/mnt/<drive-letter>`. For example, to change directories to your C: drive in the terminal, you would type the following:
+```
+cd /mnt/c
+```
+- If you prefer to use a graphical file explorer, you can install one through your terminal. I tried out a few different ones, and I found that I prefer Nemo. You can install it with the following command: 
+```
+sudo apt install nemo
+```
+NOTE: You can open Nemo with elevated permissions if needed by typing `sudo nemo` in the terminal. 
+
+- If you want to use a graphical text editor, `gedit` should work well. You can install it with the following terminal command: 
+```
+sudo apt install gedit
+```
+#### <a name="troubleshooting-tips"></a><u>Troubleshooting Tips</u>
+- If entering `wsl --install` does not work for you, read the resulting terminal output to see if it gives you any clues as to what went wrong. Microsoft has a guide here [(WSL2: Troubleshooting)](https://docs.microsoft.com/en-us/windows/wsl/troubleshooting) that should give you more information on how to troubleshoot and resolve your issues.  
+
+## Conclusion
+
+WSL is a powerful tool that can significantly enhance your productivity as a developer. It allows you to use your favorite Linux tools and applications on your Windows machine, without the need for a dual-boot setup or other virtualization method. I encourage you to try it out and see how it can improve your workflow. If you have any questions or need further assistance, feel free to reach out to me on LinkedIn or by email.
+
+
+## Links
+
+- [Connect with me on LinkedIn](https://www.linkedin.com/in/matthewblack/)
+- [My Resume](https://media.licdn.com/dms/document/media/D562DAQFn5ZjnBChbSA/profile-treasury-document-pdf-analyzed/0/1699457786893?e=1700092800&v=beta&t=XuOIeOpwcIF2_BxNFL6JxtQDVHjpVUHm1ytTQs_5wiE)
+- [Collaborate on GitHub](https://github.com/mblackonline)
+- [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/)
+- [Community Tech Network (CTN)](https://communitytechnetwork.org/)
+- [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/)
+- [Western Governors University (WGU)](https://www.wgu.edu/online-it-degrees/cloud-computing-bachelors-program.html)
