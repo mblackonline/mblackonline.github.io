@@ -298,7 +298,7 @@ I hope this guide was helpful! If you have any questions or comments, please fee
 ## Links
 
 - [Connect with me on LinkedIn](https://www.linkedin.com/in/matthewblack/)
-- [My Resume](https://media.licdn.com/dms/document/media/D562DAQHpLtQsbWEhsw/profile-treasury-document-pdf-analyzed/0/1700183982422?e=1701302400&v=beta&t=cs-65CYwucE5quQXCHMxUbGdUz4c6RDRTDbWg5B8aKo)
+- [My Resume](https://drive.google.com/file/d/1_4pYD_fEKO7HfbT5wq0Pzex0HtJ3R3mp/view?usp=sharing)
 - [Collaborate on GitHub](https://github.com/mblackonline)
 - [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/)
 - [Community Tech Network (CTN)](https://communitytechnetwork.org/)
