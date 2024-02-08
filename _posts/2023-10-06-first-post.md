@@ -27,7 +27,7 @@ Join me on this journey, and let's learn and grow together in the tech field! Yo
 ⚙️ Refer to additional links here:
 
 - [Connect with me on LinkedIn](https://www.linkedin.com/in/matthewblack/)
-- [My Resume](https://drive.google.com/file/d/1SDMnKUR80mcyifsLfnyNV-eJKAanVkQ9/view?usp=sharing)
+- [My Resume](https://drive.google.com/file/d/1o3MfP1PUiUy-qtTPzgwobzFPALMJ37Vy/view?usp=sharing)
 - [Collaborate on GitHub](https://github.com/mblackonline)
 - [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/)
 - [Community Tech Network (CTN)](https://communitytechnetwork.org/)
