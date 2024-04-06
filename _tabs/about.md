@@ -22,7 +22,7 @@ Thank you for visiting my website and for your support.
 
 ⚙️ Refer to additional links here:
 - [Connect with me on LinkedIn](https://www.linkedin.com/in/matthewblack/)
-- [My Resume](https://drive.google.com/file/d/1LBkc8DclsZiRornz4WJ1cWT1R2OaYkhV/view?usp=sharing)
+- [My Resume](https://drive.google.com/file/d/11KqIcCcq7nqhck2esLSnjzPddbP8Senf/view?usp=sharing)
 - [Collaborate on GitHub](https://github.com/mblackonline)
 - [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/)
 - [Community Tech Network (CTN)](https://communitytechnetwork.org/)
