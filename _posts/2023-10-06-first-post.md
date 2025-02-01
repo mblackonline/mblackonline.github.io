@@ -12,16 +12,17 @@ image:
 
 ## Welcome to my tech journey!
 
-Hello, I'm Matt Black, a Cloud Computing student at Western Governors University. I'm transitioning from a healthcare career to the tech industry and am excited to share my journey with you on this site.
+Hello, I'm Matt Black, a technology professional who graduated with a Bachelor of Science in Cloud Computing from Western Governors University in May 2024. After a career in healthcare, I've transitioned into the tech industry, and I'm excited to share my journey with you.
 
-In addition to my studies, I volunteer as the Operations Development Lead at [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/) and as a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/). I'm also a proud member of the [Chattanooga Technology Council (ChaTech)](https://www.chatech.org/).
+I currently work as a Helpdesk Support Specialist at Rhea Medical Center, providing technical support and leveraging my skills in hardware, software, and networking.
 
-This site serves as a learning hub and a platform for giving back to the community. I'll share insights from my courses, project updates, and reflections on my experiences in the tech world. The site was built using the Jekyll-based [Chirpy Starter template](https://github.com/cotes2020/chirpy-starter), following the excellent guide by [Tim Stewart](https://technotim.live/posts/jekyll-docs-site/) (a.k.a. Techno Tim).
+I also volunteer with [CD Tech Chattanooga](https://www.linkedin.com/company/cd-tech-chattanooga/), helping to co-lead the group and empower individuals from non-traditional backgrounds to enter the tech industry through project building, learning, and networking. Previously, I served as a Digital Coach with the [Community Tech Network (CTN)](https://communitytechnetwork.org/), promoting digital literacy and helping individuals navigate the digital world.
 
-I believe technology has the power to effect positive change, from fostering connections to combat loneliness, to empowering the disadvantaged with knowledge and promoting improved healthcare. I look forward to exploring these topics (and others) in future posts and hope to inspire others to join me in leveraging technology for good.
+This site is a space for learning and giving back to the community. I'll share insights from my projects, reflections on my experiences in the tech world, and updates on the latest technologies.
 
-Join me on this journey, and let's learn and grow together in the tech field! Your feedback, comments, and suggestions are always welcome. Connect with me on [LinkedIn](https://www.linkedin.com/in/matthewblack/) or follow me on [GitHub](https://github.com/mblackonline) to stay updated on my progress.
+I believe technology has the power to create positive change—from fostering connections to empowering people with knowledge. I look forward to exploring these topics in future posts and hope to inspire others to leverage technology for good.
 
+Join me on this journey, and let's learn and grow together in the tech field! Your feedback and suggestions are always welcome. Connect with me on [LinkedIn](https://www.linkedin.com/in/matthewblack/) or follow me on [GitHub](https://github.com/mblackonline) to stay updated on my progress.
 
 ## Links
 ⚙️ Refer to additional links here:
