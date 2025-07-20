@@ -18,7 +18,7 @@ This guide does **not** cover installing on **ARM-based computers** (like Apple 
 
 ***
 
-### **⚠️ IMPORTANT: THIS WILL ERASE ALL YOUR DATA**
+### **IMPORTANT: THIS WILL ERASE ALL YOUR DATA**
 
 Before you begin, **back up all your important files** to an external drive or cloud storage. This process will **permanently delete everything** on your computer's drive, including all documents, photos, applications, and your current operating system.
 
