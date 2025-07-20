@@ -12,138 +12,132 @@ image:
 
 # A Beginner's Guide to Dual-Booting Linux Mint
 
-This guide will walk you through installing Linux Mint alongside your current operating system. This setup, known as "dual booting," lets you choose which OS to use when you start your computer.
+This guide walks you through installing Linux Mint alongside your current operating system. This "dual-boot" setup lets you choose which OS to use when you start your computer.
 
 ### Who is this guide for?
-This guide is designed for beginners with little to no Linux experience. It provides step-by-step instructions for users with a standard **Intel or AMD (x86_64) computer** running one of the following operating systems:
-* **Windows** (10, 11)
-* **macOS** on an Intel-based Mac (only tested with Catalina)
 
-The goal of this tutorial is to install Linux Mint *next to* your existing operating system. It does **not** cover replacing your current OS, advanced partitioning, or installing on **ARM-based computers** (like Apple Silicon Macs or certain Windows devices).
+This guide is for beginners using a standard **Intel or AMD (x86_64) computer** running one of these operating systems:
+* **Windows** (10, 11, or other recent versions)
+* **macOS** on an Intel-based Mac
 
-This guide is based on the comprehensive official [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/), which is an excellent resource for more advanced topics and troubleshooting.
+This guide is based on the official [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/), which is an excellent resource for more advanced topics.
 
-*Disclaimer & Author's Note*:
-This guide was created with AI assistance and reviewed by the author, but is provided 'as-is' without warranty. You follow these instructions entirely at your own risk. The author is not responsible for any issues, including data loss, which is always a possibility when modifying your system.
+*Disclaimer & Author's Note*: 
+This guide was developed with AI assistance and reviewed by the author. It is provided for informational purposes on an "as-is" basis, without warranty. By following these instructions, you acknowledge that you do so at your own risk. The author is not liable for any issues that may occur.
 
 ### What You'll Need
 
-- A spare USB flash drive (at least 4 GB or larger).
-- At least 100 GB of free space on your computer's internal storage drive.
-- A reliable internet connection.
-- An external hard drive or cloud storage for backing up your files.
+* A USB flash drive (4 GB or larger).
+* At least 100 GB of free space on your computer's internal drive.
+* A reliable internet connection.
+* An external drive or cloud storage for backing up your files.
 
-**IMPORTANT**: You must back up your important files before proceeding. While these steps are generally safe, there is always a risk of data loss when modifying your computer's storage.
+**IMPORTANT**: Back up your important files before you begin. While these steps are generally safe, there is always a risk of data loss when partitioning a drive.
 
----
+***
 
 ## Step 1: Download the Linux Mint ISO
 
-First, you'll need the installer file, which comes in the form of an **ISO image**.
+First, you'll need the installer file, called an **ISO image**.
 
 1.  **Visit the [Linux Mint website](https://linuxmint.com/)** to download the latest version.
-2.  **Choose your edition**. Linux Mint comes in a few "flavors." For newcomers to Linux Desktop, the **Cinnamon** edition is a popular choice. It’s modern, full-featured, and widely supported.[^1]
-3.  **Download the 64-bit version**. Most computers made in the last decade are 64-bit, so this is almost certainly the right one for you.
+2.  **Choose your edition**. For beginners, the **Cinnamon** edition is a popular choice. It’s modern, full-featured, and widely supported.[^1]
+3.  **Download the 64-bit version**. Most computers made in the last decade are 64-bit, so this is almost certainly the right choice.
 
----
+***
 
 ## Step 2: Create a Bootable USB Drive
 
-You will need a USB stick that's at least 4GB. You can't just copy the ISO file to a USB drive; you need a special tool to make it bootable.
+You'll need a USB stick that's at least 4GB. You can't just copy the ISO file; you need a special tool to make the drive bootable.
 
-1.  **Download and install [Etcher](https://www.balena.io/etcher/)**. It’s a free, easy-to-use tool that works on both Windows and macOS.[^2]
-2.  Open Etcher and follow these three simple steps:
-    * Click **"Flash from file"** and select the Linux Mint ISO file you downloaded.
+1.  **Download and install [Etcher](https://www.balena.io/etcher/)**. It’s a free, easy tool for both Windows and macOS.[^2]
+2.  Open Etcher and follow these three steps:
+    * Click **"Flash from file"** and select your downloaded Linux Mint ISO.
     * Click **"Select target"** and choose your USB drive.
     * Click **"Flash!"** to create the bootable drive.
 
----
+***
 
 ## Step 3: Make Space for Linux Mint (Partitioning)
 
-Now, you need to make some free space on your main storage drive for Linux Mint. This is done by shrinking your current operating system's partition. A good starting point is **100 GB**, which should provide plenty of room for the system and your files. If you plan to use Linux Mint as your main OS, you may want to give it more space.
+Next, you need to free up space on your main drive for Linux Mint. Shrink your current OS partition to create this space. A good starting point is **100 GB**.
 
 * **On Windows**:
-    * *Note: For the best results, it's recommended to disable the "Fast Startup" feature in your Windows Power Options before partitioning.*
-    1.  Press the Windows key and type `diskmgmt.msc` to open the **Disk Management** utility.
-    2.  Right-click on your main Windows partition (usually the C: drive) and select **"Shrink Volume..."**.
-    3.  Enter the amount of space to free up.
-    4.  Click **"Shrink"**. You will now see a black bar of "Unallocated" space.
+    * *Note: It's best to first disable the "Fast Startup" feature in your Windows Power Options.*
+    1.  Press the Windows key and type `diskmgmt.msc` to open **Disk Management**.
+    2.  Right-click your main Windows partition (usually C:) and select **"Shrink Volume..."**.
+    3.  Enter the amount of space to free up and click **"Shrink"**. You will now see a black bar of "Unallocated" space.
 
 * **On an Intel-based Mac**:
-    1.  Open **"Disk Utility"** (you can find it in Applications > Utilities).
-    2.  Select your main hard drive on the left (usually named Macintosh HD).
-    3.  Click the **"Partition"** button.
-    4.  Click the **plus (+)** button to add a new partition.
-    5.  Resize the new partition to be at least **100 GB**. Name it something like "LINUXMINT" and set the format to **ExFAT** for now—the Linux installer will reformat it correctly later.
-    6.  Click **"Apply"**.
+    1.  Open **Disk Utility** (in Applications > Utilities).
+    2.  Select your main hard drive (usually Macintosh HD).
+    3.  Click the **"Partition"** button, then the **plus (+)** button.
+    4.  Resize the new partition to at least **100 GB**. Name it "LINUXMINT" and set the format to **ExFAT** for now; the installer will reformat it later.
+    5.  Click **"Apply"**.
 
-    
-    **Special Note for Newer Intel Macs (2018-2020)**: 
-    If your Intel Mac is from 2018 or newer, it has an Apple T2 Security Chip which blocks booting from a USB by default. Before you begin the installation process, you must change this setting. For official instructions, restart your Mac in Recovery Mode and follow [Apple's guide to using the Startup Security Utility](https://support.apple.com/en-us/102522). 
-    
-    In the recovery utility, apply these two settings:
-    - Secure Boot: Set to "No Security".
-    - Allowed Boot Media: Set to "Allow booting from external or removable media".
-    
-    After saving these changes, you can restart your Mac and hold the Option (Alt) key to open the boot menu and proceed with the installation.
+    **Special Note for Newer Intel Macs (2018-2020):** If your Intel Mac is from 2018 or newer, it has an Apple T2 Security Chip which blocks booting from a USB by default. Before you begin the installation process, you must change this setting. For official instructions, restart your Mac in Recovery Mode and follow [Apple’s guide to using the Startup Security Utility](https://support.apple.com/en-us/102522).
 
----
+    - In the recovery utility, apply these two settings:
+      - Secure Boot: Set to “No Security”.
+      - Allowed Boot Media: Set to “Allow booting from external or removable media”.
+      
+      After saving these changes, you can restart your Mac and hold the Option (Alt) key to open the boot menu and proceed with the installation.
+
+***
 
 ## Step 4: Boot from Your USB Drive
 
-It's time to restart your computer and boot from the USB drive you created.
+Now it's time to restart and boot from the USB drive.
 
-1.  Plug the bootable USB drive into your computer.
-2.  Restart the computer. As it starts up, you'll need to press a special key to open the **Boot Menu**.[^3]
-    * *Note: If your PC does not boot from the USB, you may need to restart, enter your computer's BIOS/UEFI settings, and temporarily disable "Secure Boot".*[^4]
+1.  Plug the bootable USB drive into your computer and restart it.
+2.  As it starts, press the special key to open the **Boot Menu**.[^3]
+    * *Note: If your PC doesn't boot from the USB, you may need to enter your computer's BIOS/UEFI settings and temporarily disable "Secure Boot".*[^4]
     * **For most PCs**, this key is `F1`, `F2`, `F10`, `F11`, `F12`, `Delete`, or `Escape`.
-    * **For Macs**, hold down the **Option (or Alt)** key right after you hear the startup chime.
-3.  From the boot menu, select your USB drive to boot from it.
-4.  A menu will appear. Select the option to **"Start Linux Mint"** and press Enter.
+    * **For Macs**, hold the **Option (or Alt)** key right after the startup chime.
+3.  From the boot menu, select your USB drive.
+4.  When the Linux Mint menu appears, select **"Start Linux Mint"** and press Enter.
 
-Your computer will now load into a "live session" of Linux Mint. This is a fully functional temporary version running from the USB stick. It's a great way to try it out, but remember that it runs slower than a full installation, and no changes you make here are permanent.
+Your computer will now load a "live session" of Linux Mint from the USB stick. This is a temporary version to try it out. It runs slower than a full installation, and no changes are saved.
 
----
+***
 
 ## Step 5: Install Linux Mint
 
-Once you're at the Linux Mint desktop, you can begin the permanent installation.
+From the live desktop, you can begin the permanent installation.
 
-1.  Double-click the **"Install Linux Mint"** icon on the desktop.
-2.  Follow the on-screen prompts to select your language and keyboard layout.
-3.  Connect to your Wi-Fi network when prompted. This allows the installer to download updates. Tick the box to **install multimedia codecs** for full video and web compatibility.
-4.  You'll reach the **"Installation type"** screen. Pay close attention here.
-    * The installer should detect your other operating system and offer to **"Install Linux Mint alongside..."** it. If you see this option, select it. It's the easiest choice and will automatically handle the partitions and set up a boot menu.
-    * If you don't see that option, choose **"Something else"**. Find the "free space" you created earlier, select it, and click the **plus (+)** button to create a new partition. Set it up as follows:
-        * **Size**: Use all the available space.
+1.  Double-click the **"Install Linux Mint"** icon.
+2.  Follow the prompts to select your language and keyboard layout.
+3.  Connect to your Wi-Fi network. This allows the installer to download updates. Tick the box to **install multimedia codecs** for full media compatibility.
+4.  At the **"Installation type"** screen, pay close attention.
+    * The installer should offer to **"Install Linux Mint alongside..."** your current OS. If you see this, select it. It's the easiest choice and automatically handles everything.
+    * If you don't see that option, choose **"Something else"**. Find the "free space" you created, select it, and click the **plus (+)** button. Use these settings:
+        * **Size**: Use all available space.
         * **Use as**: `Ext4 journaling file system`.
         * **Mount point**: `/`.
         * Click **OK**, then **Install Now**.
-5.  Continue through the final steps: select your timezone, and create your user account with a name and a strong password. For extra security, you can tick the box to **"Encrypt my home folder"**.
-6.  The installation will now proceed. When it's finished, click **"Restart Now"**. The system will prompt you to remove the USB drive before rebooting.
+5.  Continue through the final steps: select your timezone and create your user account with a name and a strong password. You can tick **"Encrypt my home folder"** for extra security.
+6.  When the installation finishes, click **"Restart Now"** and remove the USB drive when prompted.
 
-**Note for Mac Users:** After the installation is complete, you can set Linux Mint as your default startup disk. To do this, hold down the Option key during startup to show the boot manager. Then, while holding the Control key, click the arrow under the Linux Mint volume. Your Mac will now remember this choice and boot into Linux Mint by default.
-
----
+***
 
 ## Step 6: Welcome to Dual Booting!
 
-Congratulations on your new Linux Mint installation! After logging in for the first time, it's a good idea to check for any additional hardware drivers.
+After logging in for the first time, check for additional hardware drivers.
 
-From the main menu, open the **Driver Manager**. This tool will scan your system and recommend if any proprietary drivers are available for your hardware. Installing these is an important step to ensure components like your graphics card or Wi-Fi adapter perform optimally.[^5]
+- From the main menu, open the **Driver Manager**. This tool will scan your system and recommend any proprietary drivers for your hardware. Installing these is an important step to ensure components like your graphics card or Wi-Fi adapter perform correctly.[^5]
 
 Enjoy your new dual-boot setup!
 
----
+***
+
 ## Troubleshooting and Where to Find Help
 
-If you run into trouble, a great place to find help is from the official Linux Mint community.
+If you run into trouble, the best place for help is the official Linux Mint community.
 
-* **The [Linux Mint Forums](https://forums.linuxmint.com/):** This is a great place for finding answers and asking questions. There's a high probability someone has already solved the same problem you're facing.
-* **Official Documentation:** The [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/) includes helpful troubleshooting tips.
+* **The [Linux Mint Forums](https://forums.linuxmint.com/):** A great place to find answers and ask questions.
+* **Official Documentation:** The [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/) has helpful troubleshooting tips.
 
----
+***
 
 [^1]: *Linux Mint Installation Guide*, Page 4
 [^2]: *Linux Mint Installation Guide*, Page 12
