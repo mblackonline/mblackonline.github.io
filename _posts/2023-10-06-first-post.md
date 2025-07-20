@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World!"
 date: 2023-10-06 08:10:00 -0400
-categories: first-post introduction
+categories: first-post
 pin: true
 tags: jekyll cd-tech ctn digital-equity tech-for-good
 image: 
