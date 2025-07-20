@@ -78,6 +78,16 @@ Now, you need to make some free space on your main storage drive for Linux Mint.
     5.  Resize the new partition to be at least **100 GB**. Name it something like "LINUXMINT" and set the format to **ExFAT** for now—the Linux installer will reformat it correctly later.
     6.  Click **"Apply"**.
 
+    
+    **Special Note for Newer Intel Macs (2018-2020)**: 
+    If your Intel Mac is from 2018 or newer, it has an Apple T2 Security Chip which blocks booting from a USB by default. Before you begin the installation process, you must change this setting. For official instructions, restart your Mac in Recovery Mode and follow [Apple's guide to using the Startup Security Utility](https://support.apple.com/en-us/102522). 
+    
+    In the recovery utility, apply these two settings:
+    - Secure Boot: Set to "No Security".
+    - Allowed Boot Media: Set to "Allow booting from external or removable media".
+    
+    After saving these changes, you can restart your Mac and hold the Option (Alt) key to open the boot menu and proceed with the installation.
+
 ---
 
 ## Step 4: Boot from Your USB Drive

@@ -73,6 +73,15 @@ Now you will restart your computer using the USB drive you just created.
 3.  In the boot menu, use the arrow keys to select your USB drive and press Enter.
 4.  A menu will appear on the screen. Choose the option to **"Start Linux Mint"** and press Enter.
 
+    **Special Note for Newer Intel Macs (2018-2020)**: 
+    If your Intel Mac is from 2018 or newer, it has an Apple T2 Security Chip which blocks booting from a USB by default. Before you begin the installation process, you must change this setting. For official instructions, restart your Mac in Recovery Mode and follow [Apple's guide to using the Startup Security Utility](https://support.apple.com/en-us/102522). 
+    
+    In the recovery utility, apply these two settings:
+    - Secure Boot: Set to "No Security".
+    - Allowed Boot Media: Set to "Allow booting from external or removable media".
+    
+    After saving these changes, you can restart your Mac and hold the Option (Alt) key to open the boot menu and proceed with the installation.
+
 Your computer will now load a "live session" of Linux Mint directly from the USB. This is a temporary, fully-functional desktop. It's a great chance to look around, but remember it runs a bit slower from a USB and no changes you make will be saved.
 
 ---
