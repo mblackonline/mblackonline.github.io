@@ -40,7 +40,9 @@ This guide was developed with AI assistance and reviewed by the author. It is pr
 First, download the Linux Mint installer, which is an **ISO file**.
 
 1.  Go to the **[official Linux Mint website](https://linuxmint.com/)**.
-2.  Choose your edition. The **Cinnamon** edition is modern, popular, and highly recommended for newcomers[^1].
+2.  **Choose your edition**. Linux Mint offers several editions built around different desktop environments.
+  - For modern computers, the Cinnamon edition is a good choice. It provides a polished, feature-rich desktop that's intuitive for new users.[^1]
+  - For less powerful computers, I recommend the XFCE edition. It provides a lightweight, fast desktop that ensures a smooth and reliable experience.
 3.  Download the **64-bit version**, which is the correct choice for nearly all modern computers.
 
 ---
