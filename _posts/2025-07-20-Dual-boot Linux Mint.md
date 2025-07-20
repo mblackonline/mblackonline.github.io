@@ -94,7 +94,7 @@ Now it's time to restart and boot from the USB drive.
 1.  Plug the bootable USB drive into your computer and restart it.
 2.  As it starts, press the special key to open the **Boot Menu**.[^3]
     * *Note: If your PC doesn't boot from the USB, you may need to enter your computer's BIOS/UEFI settings and temporarily disable "Secure Boot".*[^4]
-    * **For most PCs**, this key is `F1`, `F2`, `F10`, `F11`, `F12`, `Delete`, or `Escape`.
+    * **For most PCs**, this key is `F1`, `F2`, `F10`, `F11`, `F12`, `Delete`, or `Escape` (a quick online search should help you identify the correct key).
     * **For Macs**, hold the **Option (or Alt)** key right after the startup chime.
 3.  From the boot menu, select your USB drive.
 4.  When the Linux Mint menu appears, select **"Start Linux Mint"** and press Enter.
