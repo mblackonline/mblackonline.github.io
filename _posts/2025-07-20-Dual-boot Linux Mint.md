@@ -128,7 +128,7 @@ Enjoy your new dual-boot setup!
 ---
 ## Troubleshooting and Where to Find Help
 
-If you run into trouble, the best place to find help is from the official Linux Mint community.
+If you run into trouble, a great place to find help is from the official Linux Mint community.
 
 * **The [Linux Mint Forums](https://forums.linuxmint.com/):** This is a great place for finding answers and asking questions. There's a high probability someone has already solved the same problem you're facing.
 * **Official Documentation:** The [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/) includes helpful troubleshooting tips.
