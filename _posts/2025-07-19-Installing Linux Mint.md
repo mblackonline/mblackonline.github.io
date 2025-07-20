@@ -63,7 +63,7 @@ Now you will restart your computer using the USB drive you just created.
 
 1. Make sure the bootable USB drive is plugged into your computer.
 2. Restart your computer. As it powers on, you must press a specific key to open the Boot Menu[^3].
-  - For **Windows PCs**, this key could be F1, F2, F10, F11, F12, Delete, or Escape.
+  - For **Windows PCs**, this key could be F1, F2, F10, F11, F12, Delete, or Escape. (A quick online search should help you identify the correct key).
   - For **Intel-based Macs**, hold down the Option (or Alt) key immediately after you hear the startup sound.
   - In the boot menu, use the arrow keys to select your USB drive and press Enter.
   - A menu will appear on the screen. Choose the option to “Start Linux Mint” and press Enter.
