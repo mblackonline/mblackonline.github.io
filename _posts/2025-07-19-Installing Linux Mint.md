@@ -90,6 +90,7 @@ Once you're at the temporary "live" desktop, you're ready to install.
 5.  Click **"Install Now"** and confirm the changes.
 6.  Complete the final steps by choosing your timezone and creating a user account with a strong password. For added security, you can check the box to **"Encrypt my home folder."**
 7.  Once the installation is finished, click **"Restart Now"** and remove the USB drive when prompted.
+8. *For PCs* - upon reboot, your computer will display a menu called **GRUB**. This is the Linux bootloader. Since you only have Linux Mint installed, it will automatically select and start Linux Mint after a few seconds. You don't need to do anything here.
 
 ---
 
