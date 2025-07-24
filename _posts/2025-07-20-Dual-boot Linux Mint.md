@@ -10,172 +10,168 @@ image:
   lqip: data:image/jpeg;base64,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dzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1sbnM6R0lNUD0iaHR0cDovL3d3dy5naW1wLm9yZy94bXAvIiB4bWxuczppcHRjRXh0PSJodHRwOi8vaXB0Yy5vcmcvc3RkL0lwdGM0eG1wRXh0LzIwMDgtMDItMjkvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06RG9jdW1lbnRJRD0iZ2ltcDpkb2NpZDpnaW1wOjgwZjJjYjYyLWM2NWYtNGIyYS1iZjU1LTM0ZmYzODhiNTY3YiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxMmZiNjkxMC02ZWJiLTRiYmEtOTRkMC05NmNkMzYxYzM3NWUiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpmNzAwMWZlYy0xYjRmLTQyZTctOGMxZS02NjAxZmNhNmZlNTYiIGRjOkZvcm1hdD0iaW1hZ2UvanBlZyIgZXhpZjpEYXRlVGltZU9yaWdpbmFsPSIyMDI1LTA3LTIwVDA1OjQ1OjQ2KzAwOjAwIiBHSU1QOkFQST0iMi4wIiBHSU1QOlBsYXRmb3JtPSJXaW5kb3dzIiBHSU1QOlRpbWVTdGFtcD0iMTc1Mjk5MDk0MzMzNjUzOCIgR0lNUDpWZXJzaW9uPSIyLjEwLjI4IiBpcHRjRXh0OkRpZ2l0YWxTb3VyY2VGaWxlVHlwZT0iaHR0cDovL2N2LmlwdGMub3JnL25ld3Njb2Rlcy9kaWdpdGFsc291cmNldHlwZS90cmFpbmVkQWxnb3JpdGhtaWNNZWRpYSIgaXB0Y0V4dDpEaWdpdGFsU291cmNlVHlwZT0iaHR0cDovL2N2LmlwdGMub3JnL25ld3Njb2Rlcy9kaWdpdGFsc291cmNldHlwZS90cmFpbmVkQWxnb3JpdGhtaWNNZWRpYSIgcGhvdG9zaG9wOkNyZWRpdD0iTWFkZSB3aXRoIEdvb2dsZSBBSSIgcGhvdG9zaG9wOkRhdGVDcmVhdGVkPSIyMDI1LTA3LTIwVDA1OjQ1OjQ2KzAwOjAwIiB4bXA6Q3JlYXRvclRvb2w9IkdJTVAgMi4xMCI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDpjaGFuZ2VkPSIvIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjM3NDI5OTM4LWI0MzgtNDhhMC1hY2I5LWQzZjM1OTY4ZWQ5NyIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iR2ltcCAyLjEwIChXaW5kb3dzKSIgc3RFdnQ6d2hlbj0iMjAyNS0wNy0yMFQwMTo1MTozNyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0OmNoYW5nZWQ9Ii8iIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NzRlNjI1Y2UtMjhlMC00NDQxLWFmYTctZTQ1ODllNjcyNTViIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJHaW1wIDIuMTAgKFdpbmRvd3MpIiBzdEV2dDp3aGVuPSIyMDI1LTA3LTIwVDAxOjU1OjQzIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg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
 ---
 
-# A First-Time User's Guide to Dual-Booting Linux Mint
-
-This guide walks you through installing Linux Mint alongside your current operating system. This "dual-boot" setup lets you choose which OS to use when you start your computer.
+This guide walks you through installing Linux Mint alongside your current operating system, creating a "dual-boot" setup that lets you choose which OS to use at startup.
 
 ### Who is this guide for?
 
-This guide is for new users using a standard **Intel or AMD (x86_64) computer** running one of these operating systems:
-* **Windows** (10, 11, or other recent versions)
-* **macOS** on an Intel-based Mac
+New users with **Intel or AMD (x86_64) computers** running:
+* **Windows** (10, 11, or recent versions)
+* **macOS** on Intel-based Mac
 
-This guide is based on the official [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/), which is an excellent resource for more advanced topics.
+This guide is based on the official [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/).
 
-*Disclaimer & Author's Note*: 
-This guide was developed with AI assistance and reviewed by the author. It is provided for informational purposes on an "as-is" basis, without warranty. By following these instructions, you acknowledge that you do so at your own risk. The author is not liable for any issues that may occur.
+**Note for Mac Users**: This guide was tested on a 2012 MacBook Pro. If you have a different Mac model, please research whether these instructions apply to your specific computer before proceeding.
+
+*Disclaimer*: This guide was developed with AI assistance. It's provided "as-is" without warranty. By following these instructions, you acknowledge you do so at your own risk. The author is not liable for any issues.
 
 ### What You'll Need
 
-* A USB flash drive (4 GB or larger).
-* At least 100 GB of free space on your computer's internal drive.
-* A reliable internet connection.
-* An external drive or cloud storage for backing up your files.
+* USB flash drive (4 GB or larger)
+* At least 100 GB free space on your internal drive
+* Reliable internet connection
+* External drive or cloud storage for backing up files
 
-**IMPORTANT**: Back up your important files before you begin. While these steps are generally safe, there is always a risk of data loss when partitioning a drive.
+**IMPORTANT**: Back up important files before beginning. While generally safe, there's always risk of data loss when partitioning drives.
 
-***
+---
 
 ## Step 1: Download the Linux Mint ISO
 
-First, you'll need the installer file, called an **ISO image**.
+1. **Visit [Linux Mint website](https://linuxmint.com/)** to download the latest version
+2. **Choose your edition**:
+   - **Cinnamon**: Recommended for modern computers - polished, feature-rich desktop[^1]
+   - **XFCE**: For older/less powerful computers - lightweight and fast
+3. **Download the 64-bit version** (correct for most computers made in the last decade)
 
-1.  **Visit the [Linux Mint website](https://linuxmint.com/)** to download the latest version.
-2.  **Choose your edition**. Linux Mint offers several editions built around different desktop environments.
-  - For modern computers, the Cinnamon edition is a good choice. It provides a polished, feature-rich desktop that's intuitive for new users.[^1]
-  - For less powerful computers, I recommend the XFCE edition. It provides a lightweight, fast desktop that ensures a smooth and reliable experience.
-3.  **Download the 64-bit version**. Most computers made in the last decade are 64-bit, so this is almost certainly the right choice.
-
-***
+---
 
 ## Step 2: Create a Bootable USB Drive
 
-You'll need a USB stick that's at least 4GB. You can't just copy the ISO file; you need a special tool to make the drive bootable.
+You need a special tool to make the USB drive bootable.
 
-1.  **Download and install [Etcher](https://www.balena.io/etcher/)**. It’s a free, easy tool for both Windows and macOS.[^2]
-2.  Open Etcher and follow these three steps:
-    * Click **"Flash from file"** and select your downloaded Linux Mint ISO.
-    * Click **"Select target"** and choose your USB drive.
-    * Click **"Flash!"** to create the bootable drive.
+1. **Download and install [Etcher](https://www.balena.io/etcher/)** (free for Windows and macOS)[^2]
+2. **Open Etcher** and follow three steps:
+   * Click **"Flash from file"** and select your Linux Mint ISO
+   * Click **"Select target"** and choose your USB drive
+   * Click **"Flash!"** to create the bootable drive
 
-***
+---
 
-## Step 3: Make Space for Linux Mint (Partitioning)
+## Step 3: Make Space for Linux Mint
 
-Next, you need to free up space on your main drive for Linux Mint. Shrink your current OS partition to create this space. A good starting point is **100 GB**.
+Shrink your current OS partition to create space for Linux Mint. Allocate at least **100 GB**, or more if you plan to use Linux as your primary OS.
 
-* **On Windows**:
-    * *Note: It's best to first disable the "Fast Startup" feature in your Windows Power Options.*
-    1.  Press the Windows key and type `diskmgmt.msc` to open **Disk Management**.
-    2.  Right-click your main Windows partition (usually C:) and select **"Shrink Volume..."**.
-    3.  Enter the amount of space to free up and click **"Shrink"**. You will now see a black bar of "Unallocated" space.
+**On Windows**:
+*Note: First disable "Fast Startup" in Windows Power Options.*
+1. Press Windows key, type `diskmgmt.msc` to open **Disk Management**
+2. Right-click your main Windows partition (usually C:) and select **"Shrink Volume..."**
+3. Enter space amount and click **"Shrink"** - you'll see black "Unallocated" space
 
-* **On an Intel-based Mac**:
-    1.  Open **Disk Utility** (in Applications > Utilities).
-    2.  Select your main hard drive (usually Macintosh HD).
-    3.  Click the **"Partition"** button, then the **plus (+)** button.
-    4.  Resize the new partition to at least **100 GB**. Name it "LINUXMINT" and set the format to **exFAT** for now; we will reformat it again in later steps.
-    5.  Click **"Apply"**.
+**On Intel-based Mac**:
+1. Open **Disk Utility** (Applications > Utilities)
+2. Select your main drive (usually Macintosh HD)
+3. Click **"Partition"** button, then **plus (+)** button
+4. Resize new partition to at least **100 GB**, name it "LINUXMINT", format as **exFAT**
+5. Click **"Apply"**
 
-    **Special Note for Newer Intel Macs (2018-2020):** If your Intel Mac is from 2018 or newer, it has an Apple T2 Security Chip which blocks booting from a USB by default. Before you begin the installation process, you must change this setting. For official instructions, restart your Mac in Recovery Mode and follow [Apple’s guide to using the Startup Security Utility](https://support.apple.com/en-us/102522).
+---
 
-    - In the recovery utility, apply these two settings:
-      - Secure Boot: Set to “No Security”.
-      - Allowed Boot Media: Set to “Allow booting from external or removable media”.
-      
-      After saving these changes, you can restart your Mac and hold the Option (Alt) key to open the boot menu and proceed with the installation.
+## Step 4: Boot from USB Drive
 
-***
+1. **Plug in USB drive** and restart computer
+2. **Press boot menu key** as it starts[^3]:
+   * **PCs**: Usually `F1`, `F2`, `F10`, `F11`, `F12`, `Delete`, or `Escape` (search online to find the correct key for your computer)
+   * **Macs**: Hold **Option (Alt)** key after startup chime
+3. **Select USB drive** from boot menu
+4. **Choose "Start Linux Mint"** from the menu
 
-## Step 4: Boot from Your USB Drive
+You'll now see a "live session" - a temporary version running from the USB.
 
-Now it's time to restart and boot from the USB drive.
-
-1.  Plug the bootable USB drive into your computer and restart it.
-2.  As it starts, press the special key to open the **Boot Menu**.[^3]
-    * *Note: If your PC doesn't boot from the USB, you may need to enter your computer's BIOS/UEFI settings and temporarily disable "Secure Boot".*[^4]
-    * **For most PCs**, this key is `F1`, `F2`, `F10`, `F11`, `F12`, `Delete`, or `Escape` (a quick online search will help you identify the correct key).
-    * **For Macs**, hold the **Option (or Alt)** key right after the startup chime.
-3.  From the boot menu, select your USB drive.
-4.  When the Linux Mint menu appears, select **"Start Linux Mint"** and press Enter.
-
-Your computer will now load a "live session" of Linux Mint from the USB stick. This is a temporary version to try it out. It runs slower than a full installation, and no changes are saved.
-
-***
+---
 
 ## Step 5: Install Linux Mint
 
-From the live desktop, the installation process is different for Windows and Mac users. Please follow the path that applies to you.
+### For Windows Users
 
-### For Windows Users (Easiest Method)
+1. Double-click **"Install Linux Mint"** icon
+2. Follow prompts for language, keyboard, Wi-Fi, and tick multimedia codecs box
+3. At **"Installation type"**, select **"Install Linux Mint alongside Windows Boot Manager"**
+4. Use slider to allocate the free space you created in Step 3 to Linux Mint
+5. Click **Install Now**, complete timezone and user account setup
+6. Click **"Restart Now"** when finished, remove USB when prompted
 
-1.  Double-click the **"Install Linux Mint"** icon to begin.
-2.  Follow the prompts for language, keyboard, and Wi-Fi. Tick the box to install multimedia codecs.
-3.  At the **"Installation type"** screen, select the option to **"Install Linux Mint alongside Windows Boot Manager"**. The installer will show you a slider to adjust the space between Windows and Linux. Adjust it to give Linux at least 100 GB.
-4.  Click **Install Now**, and continue through the final steps to select your timezone and create a user account.
-5.  When the installation finishes, click **"Restart Now"** and remove the USB drive when prompted.
-
-### For Mac Users (Required Method)
-
-For Mac users, the process involves two parts: creating partitions with a separate tool first, and then running the installer.
+### For Mac Users
 
 **Part A: Create Partitions with GParted**
+1. Open **GParted** from main menu
+2. Select the free space created in Step 3
+3. Create three new partitions (right-click free space, select "New"):
+   * **EFI Partition**: `1000 MB`, format as `fat32`. After creating, right-click → "Manage Flags" → check `boot` and `esp`
+   * **Swap Partition**: Size equal to your RAM, format as `linux-swap`
+   * **Root Partition**: Remaining space, format as `ext4`
+4. Click green checkmark to apply changes, close GParted
 
-Before launching the installer, you must manually partition your drive using GParted.
+**Part B: Run Installer**
+1. Double-click **"Install Linux Mint"** icon
+2. Proceed through initial screens
+3. At **"Installation type"**, choose **"Something else"**
+4. Assign partitions:
+   * Select the `ext4` partition (root partition) → "Change..." → set "Use as:" to `Ext4 journaling file system` and "Mount point:" to **`/`**
+   * `linux-swap` partition should auto-detect
+5. **Crucial**: Set **"Device for boot loader installation"** to the `fat32` EFI partition
+6. Click **"Install Now"**, confirm changes, complete setup
+7. Restart and remove USB when finished
 
-1.  From the live session's main menu, find and open the **GParted** application.
-2.  In GParted, find the "free space" you created back in Step 3. Select it.
-3.  You will now create three new partitions within this free space by right-clicking it and selecting "New":
-    * **EFI Partition:** Create a `1000 MB` partition and format it as `fat32`. After creating it, right-click the new partition, choose "Manage Flags," and check both **`boot`** and **`esp`**.
-    * **Swap Partition:** Create a second partition for virtual memory (a good size is equal to your Mac's RAM). Format this as `linux-swap`.
-    * **Root Partition:** Use all the remaining free space for your final partition. Format it as `ext4`.
-4.  Click the green checkmark in GParted to apply all changes. Once complete, close GParted.
-
-**Part B: Run the Linux Mint Installer**
-
-1.  Now, on the desktop, double-click the **"Install Linux Mint"** icon.
-2.  Proceed through the initial screens (Language, Keyboard, Multimedia codecs).
-3.  At the **"Installation type"** screen, you must choose the **"Something else"** option.
-4.  The next screen will show the partitions you just made in GParted. You must assign them:
-    * Find and select your large `ext4` partition. Click the "Change..." button, set "Use as:" to `Ext4 journaling file system`, and set the "Mount point:" to **`/`** (for root).
-    * The installer should automatically detect the `linux-swap` partition for use as swap space.
-5.  **Crucial Final Step:** At the bottom of this window, find the dropdown menu for **“Device for boot loader installation”**. You must set this to the `fat32` EFI partition you created.
-6.  Click **"Install Now"**, confirm the changes in the pop-up window, and complete the installation by choosing your timezone and creating a user account.
-7.  When the process is finished, restart your computer and remove the USB drive.
-
-***
+---
 
 ## Step 6: Choosing Your OS at Startup
 
-The way you choose your operating system at startup differs between a PC and a Mac.
+**On PC**: You'll see **GRUB** menu at startup. Use arrow keys to select Linux Mint or Windows, press Enter.
 
-* **On a PC:** When you restart, you will now see a menu called **GRUB**. This is your new boot manager. Use the arrow keys to select either Linux Mint or Windows and press Enter.
-* **On a Mac:** The GRUB menu will not appear. To choose an OS, shut down your Mac and power it on while **holding the Option (Alt) key**. When the selection screen appears, click the OS you want to use. To set a default OS, hold the **Control** key and then click the arrow under your preferred operating system.
+**On Mac**: No GRUB menu appears. To choose OS: shut down, power on while **holding Option (Alt) key**. Click desired OS. To set default: hold **Control** and click arrow under preferred OS.
 
 ### First Login
 
-After logging in for the first time, check for additional hardware drivers.
+Open **Driver Manager** from main menu to scan for and install recommended hardware drivers for optimal performance.[^5]
 
-* From the main menu, open the **Driver Manager**. This tool will scan your system and recommend any proprietary drivers for your hardware. Installing these is an important step to ensure components like your graphics card or Wi-Fi adapter perform correctly.[^5]
+---
 
-Enjoy your new dual-boot setup!
+## Troubleshooting
 
-***
+If you run into issues, try these solutions:
 
-## Troubleshooting and Where to Find Help
+### Boot Problems
 
-If you run into trouble, the best place for help is the official Linux Mint community.
+**USB won't boot on Windows PC**:
+- Enter BIOS/UEFI settings and temporarily disable **"Secure Boot"**[^4]
+- Remember to re-enable Secure Boot after installation
 
-* **The [Linux Mint Forums](https://forums.linuxmint.com/):** A great place to find answers and ask questions.
-* **Official Documentation:** The [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/) has helpful troubleshooting tips.
+**Boot issues on newer Intel Macs (2018-2020 with T2 chip)**:
+1. Boot into Recovery Mode (`Command + R` at startup)
+2. Open **Startup Security Utility** from Utilities menu:
+   * Set **Secure Boot** to "No Security"
+   * Set **Allowed Boot Media** to "Allow booting from external or removable media"
+3. **Optional but recommended**: Open **Terminal** from Utilities menu and disable SIP:
+4. Restart and boot from USB (hold Option key at startup)
+5. **Important**: After installation, re-enable these security features by repeating steps 1-2 and reversing the settings
 
-***
+**Security Warning**: Disabling these security features temporarily reduces your system's protection against malware and unauthorized modifications. Re-enable them promptly after completing the Linux installation to restore full security.
+
+### Getting Help
+
+* **[Linux Mint Forums](https://forums.linuxmint.com/)**: Community Q&A
+* **[Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/)**: Official troubleshooting
+
+---
 
 [^1]: *Linux Mint Installation Guide*, Page 4
 [^2]: *Linux Mint Installation Guide*, Page 12
 [^3]: *Linux Mint Installation Guide*, Page 15
 [^4]: *Linux Mint Installation Guide*, Page 33
 [^5]: *Linux Mint Installation Guide*, Page 25
+
+
+---
 
 ## Links
 
