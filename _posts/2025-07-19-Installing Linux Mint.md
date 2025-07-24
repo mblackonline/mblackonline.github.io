@@ -24,7 +24,7 @@ Back up your system before beginning. This process will **permanently delete eve
 
 * **Mac users**: You can create a clone with **Disk Utility**. Boot into Recovery Mode (`Command + R` at startup), open Disk Utility, and use **"Restore"** to copy your internal drive (Source) to an external drive (Destination).
 
-*Disclaimer*: This guide was developed with AI assistance and reviewed by the author. Provided "as-is" without warranty. Mac steps tested on 2012 MacBook Pro; newer models may need additional research. You proceed at your own risk.
+*Disclaimer*: This guide was developed with AI assistance and reviewed by the author. Provided "as-is" without warranty. Mac steps tested on 2012 MacBook Pro; different models may need additional research. You proceed at your own risk.
 
 ***
 
