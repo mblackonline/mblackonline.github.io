@@ -12,7 +12,7 @@ image:
 
 # How to Replace Windows or macOS with Linux Mint
 
-This guide provides a beginner-friendly walkthrough for replacing your current operating system with Linux Mint. Following these steps will **erase your entire hard drive** and install Linux Mint as the only OS on your standard **Intel or AMD (x86_64) computer**.
+This guide provides a walkthrough for replacing your current operating system with Linux Mint. Following these steps will **erase your entire hard drive** and install Linux Mint as the only OS on your standard **Intel or AMD (x86_64) computer**.
 
 This guide does **not** cover installing on **ARM-based computers** (like Apple Silicon Macs). It is based on the official [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/), a great resource for more advanced topics.
 
@@ -20,11 +20,11 @@ This guide does **not** cover installing on **ARM-based computers** (like Apple 
 
 ### **IMPORTANT: THIS WILL ERASE ALL YOUR DATA**
 
-Before you begin, you must back up your system. This process will **permanently delete everything** on your computer's drive.
+Before you begin, I strongly suggest backing up your system. This process will **permanently delete everything** on your computer's drive.
 
-* **For PC (Windows) users**, we strongly recommend creating a full disk image (a "clone") using a free tool like **[Clonezilla](https://clonezilla.org/)**. This creates an exact copy of your entire hard drive onto an external disk, allowing you to restore your computer precisely to its previous state.
+* **For PC (Windows) users**, I recommend making a full disk image (a "clone") using a free tool like **[Clonezilla](https://clonezilla.org/)**. This creates a copy of your entire hard drive onto an external disk, allowing you to restore your computer to its previous state.
 
-* **For Mac users**, the safest backup is a clone made with the free, built-in **Disk Utility**. To do this, boot into Recovery Mode (`Command + R` at startup), open Disk Utility, and use the **"Restore"** feature to copy your internal drive (the "Source") to an external drive (the "Destination").
+* **For Mac users**, you can make a clone with the built-in **Disk Utility**. To do this, boot into Recovery Mode (`Command + R` at startup), open Disk Utility, and use the **"Restore"** feature to copy your internal drive (the "Source") to an external drive (the "Destination").
 
 *Disclaimer & Author's Note*:
 This guide was developed with AI assistance and reviewed by the author. It is provided for informational purposes on an “as-is” basis, without warranty. The Mac installation steps have been tested on a 2012 MacBook Pro; newer models may require additional research. By following these instructions, you acknowledge that you do so at your own risk. The author is not liable for any issues that may occur.
@@ -78,7 +78,7 @@ Now you will restart your computer using the USB drive you just created.
 
 * **For Windows PCs:** If your PC doesn’t boot from the USB, you may need to enter your computer’s BIOS/UEFI settings and temporarily disable the **“Secure Boot”** feature. [^4]
 
-* **For Newer Intel Macs (with T2 Security Chip, 2018-2020):** Newer Macs have security features that you must disable before you can install Linux. This is a two-part process that happens in Recovery Mode *before* you boot from the USB.
+* **For Newer Intel Macs (with T2 Security Chip, 2018-2020):** Newer Macs have security features that need to be  disabled before you can install Linux. This is a two-part process that happens in Recovery Mode *before* you boot from the USB.
     1.  First, turn off your Mac. Press the power button and immediately hold **Command (⌘) + R** to boot into Recovery Mode.
     2.  From the Utilities menu at the top of the screen, open the **Startup Security Utility**. Apply these two settings:
         * Set **Secure Boot** to “No Security”.
@@ -93,16 +93,16 @@ Now you will restart your computer using the USB drive you just created.
 
 ## Step 4: Install Linux Mint
 
-Once you're at the temporary "live" desktop, you're ready to install. This guide focuses on a simple, single-OS setup and does not cover dual-booting.
+Once you're at the temporary "live" desktop, you're ready to install.
 
 1.  Double-click the **"Install Linux Mint"** icon on the desktop.
 2.  Select your language and keyboard layout.
 3.  Connect to your Wi-Fi network. This allows the installer to download updates. Be sure to check the box to **install multimedia codecs**.
-4.  At the **"Installation type"** screen, choose **"Erase disk and install Linux Mint"**. This is the simplest method. It will automatically reformat the entire drive and set up Linux Mint as the only operating system, deleting macOS or Windows in the process.
+4.  At the **"Installation type"** screen, choose **"Erase disk and install Linux Mint"**. It should automatically reformat the entire drive and set up Linux Mint as the only operating system, deleting macOS or Windows in the process.
 5.  Click **"Install Now"** and confirm the changes when prompted.
 6.  Complete the final steps by choosing your timezone and creating a user account with a strong password. For added security, you can check the box to **"Encrypt my home folder."**
 7.  Once the installation is finished, click **"Restart Now"** and remove the USB drive when prompted.
-8.  *For PCs* - upon reboot, your computer will display a menu called **GRUB**. This is the Linux bootloader. Since you only have Linux Mint installed, it will automatically start after a few seconds. You don't need to do anything here.
+8.  *For PCs* - upon reboot, your computer will display a menu called **GRUB**. This is the Linux bootloader. Since you only have Linux Mint installed, it will automatically start after a few seconds.
 
 ---
 
@@ -112,13 +112,13 @@ After logging into your new Linux Mint system, it's a good idea to check for dri
 
 * Open the **Driver Manager** from the main menu. It will scan your system for any proprietary drivers for hardware like your graphics card or Wi-Fi adapter. Install any recommended drivers to ensure your computer runs at its best.
 
-**A Note for Mac Users: SIP & Restoring macOS**
+**Restoring Your Original Operating System**
+If you decide to return to your original operating system, the backup clone you created earlier is your best option for a complete restoration:
 
-In Step 3, you disabled System Integrity Protection (SIP). Because this guide erases the macOS Recovery partition, you cannot easily re-enable SIP after installing Linux Mint.
+- For **Windows** users: Use Clonezilla to restore from the full disk image you created. Boot from a Clonezilla USB drive and follow the restore process to return your system to its previous state.
 
-However, your Mac is not permanently altered. If you wish to restore macOS, your best option is to restore from the backup clone you made with **Disk Utility**. For a fresh start, you can also try using Apple's **Internet Recovery** by holding **`Option + Command (⌘) + R`** at startup.[^6] There are other ways to reinstall macOS, but those are beyond the scope of this post. 
+- For **Mac** users: Restore from the backup clone you made with Disk Utility. Boot into Recovery Mode (Command + R at startup), open Disk Utility, and use the "Restore" feature to copy your backup drive (the "Source") back to your internal drive (the "Destination"). If you want a fresh installation rather than restoring from backup, you can also try using Apple's Internet Recovery by holding Option + Command (⌘) + R at startup.[^6] There are other methods to reinstall your original operating system, but those are beyond the scope of this post.
 
----
 ---
 
 **Enjoy your new Linux Mint system!** :-)
