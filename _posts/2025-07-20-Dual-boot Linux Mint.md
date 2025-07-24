@@ -14,7 +14,7 @@ This guide walks you through installing Linux Mint alongside your current operat
 
 ### Who is this guide for?
 
-New users with **Intel or AMD (x86_64) computers** running:
+Users with **Intel or AMD (x86_64) computers** running:
 * **Windows** (10, 11, or recent versions)
 * **macOS** on Intel-based Mac
 
