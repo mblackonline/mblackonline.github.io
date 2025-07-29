@@ -20,7 +20,7 @@ Users with **Intel or AMD (x86_64) computers** running:
 
 This guide is based on the official [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/).
 
-**Note for Mac Users**: The macOS portion of this guide was tested on a 2012 MacBook Pro. If you have a different Mac model, please research whether these instructions apply to your specific Mac before proceeding.
+**Note for Mac Users**: The macOS portion of this guide was tested on a 2012 MacBook Pro. If you have a different Mac model, please research whether these instructions apply to your specific model before proceeding.
 
 *Disclaimer*: This guide was developed with AI assistance. It's provided "as-is" without warranty. By following these instructions, you acknowledge you do so at your own risk. The author is not liable for any issues.
 
