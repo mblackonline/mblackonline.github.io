@@ -71,7 +71,7 @@ Shrink your current OS partition to create space for Linux Mint. Allocate at lea
 1. Open **Disk Utility** (Applications > Utilities)
 2. Select your main drive (usually Macintosh HD)
 3. Click **"Partition"** button, then **plus (+)** button
-4. Resize new partition to at least **100 GB**, name it "LINUXMINT", format as **exFAT**
+4. Resize new partition to at least **50 GB**, name it "LINUXMINT", format as **exFAT**
 5. Click **"Apply"**
 
 ---
