@@ -27,7 +27,7 @@ This guide is based on the official [Linux Mint Installation Guide](https://linu
 ### What You'll Need
 
 * USB flash drive (4 GB or larger)
-* At least 100 GB free space on your internal drive
+* At least 50 GB free space on your internal drive (100 GB or more is better if you plan to use Linux as a daily driver).
 * Reliable internet connection
 * External drive or cloud storage for backing up files
 
@@ -59,7 +59,7 @@ You need a special tool to make the USB drive bootable.
 
 ## Step 3: Make Space for Linux Mint
 
-Shrink your current OS partition to create space for Linux Mint. Allocate at least **100 GB**, or more if you plan to use Linux as your primary OS.
+Shrink your current OS partition to create space for Linux Mint. Allocate at least **50 GB**, or more if you plan to use Linux as your primary OS.
 
 **On Windows**:
 *Note: First disable "Fast Startup" in Windows Power Options.*
