@@ -20,14 +20,14 @@ Users with **Intel or AMD (x86_64) computers** running:
 
 This guide is based on the official [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/).
 
-**Note for Mac Users**: This guide was tested on a 2012 MacBook Pro. If you have a different Mac model, please research whether these instructions apply to your specific computer before proceeding.
+**Note for Mac Users**: The macOS portion of this guide was tested on a 2012 MacBook Pro. If you have a different Mac model, please research whether these instructions apply to your specific model before proceeding.
 
 *Disclaimer*: This guide was developed with AI assistance. It's provided "as-is" without warranty. By following these instructions, you acknowledge you do so at your own risk. The author is not liable for any issues.
 
 ### What You'll Need
 
 * USB flash drive (4 GB or larger)
-* At least 100 GB free space on your internal drive
+* At least 50 GB free space on your internal drive (100 GB or more is better if you plan to use Linux as a daily driver).
 * Reliable internet connection
 * External drive or cloud storage for backing up files
 
@@ -59,7 +59,7 @@ You need a special tool to make the USB drive bootable.
 
 ## Step 3: Make Space for Linux Mint
 
-Shrink your current OS partition to create space for Linux Mint. Allocate at least **100 GB**, or more if you plan to use Linux as your primary OS.
+Shrink your current OS partition to create space for Linux Mint. Allocate at least **50 GB**, or more if you plan to use Linux as your primary OS.
 
 **On Windows**:
 *Note: First disable "Fast Startup" in Windows Power Options.*
@@ -71,7 +71,7 @@ Shrink your current OS partition to create space for Linux Mint. Allocate at lea
 1. Open **Disk Utility** (Applications > Utilities)
 2. Select your main drive (usually Macintosh HD)
 3. Click **"Partition"** button, then **plus (+)** button
-4. Resize new partition to at least **100 GB**, name it "LINUXMINT", format as **exFAT**
+4. Resize new partition to at least **50 GB**, name it "LINUXMINT", format as **exFAT**
 5. Click **"Apply"**
 
 ---
