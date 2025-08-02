@@ -64,7 +64,10 @@ This streamlined guide shows how to run VMware ESXi 8 within Proxmox VE on unsup
 
 ## Step 2: Create VM in Proxmox [^2]
 
-1. Upload the ESXi ISO to Proxmox storage
+1. Upload the ESXi ISO to Proxmox storage:
+   - **Option A (Web UI):** Go to Datacenter → Storage → local → ISO Images → Upload
+   - **Option B (SCP):** Use `scp filename.iso root@proxmox-ip:/var/lib/vz/template/iso/`
+   - **Option C (wget):** SSH to Proxmox and use `wget` to download directly to `/var/lib/vz/template/iso/`
 
 2. Create a new VM with these essential settings:
    - **OS**: Linux 6.x - 2.6 Kernel
