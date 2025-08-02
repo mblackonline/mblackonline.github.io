@@ -71,13 +71,12 @@ This streamlined guide shows how to run VMware ESXi 8 within Proxmox VE on unsup
 
 2. Create a new VM with these essential settings:
    - **OS**: Linux 6.x - 2.6 Kernel
+     - **CD/DVD**: Select the ESXi ISO you uploaded
    - **System**: OVMF (UEFI), EFI disk enabled, SCSI: VMware PVSCSI
    - **Disk**: SATA, 32GB+, SSD emulation, Discard enabled
    - **CPU**: 2+ cores, Type: host (or kvm64 for compatibility)
-   - **Memory**: 8192 MB minimum (recommended)
+   - **Memory**: 8192MB minimum
    - **Network**: Intel E1000 or vmxnet3
-
-3. Mount the ESXi ISO to the VM's CD/DVD drive
 
 ## Step 4: Make CPU Fix Permanent
 
